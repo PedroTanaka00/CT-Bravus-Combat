@@ -1,0 +1,5515 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bravus Combat em Limeira/SP. Muay Thai, Boxe, Jiu-Jitsu e turmas Kids para quem quer evoluir com disciplina, técnica e coragem." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="196x196" href="/favicon/favicon-196x196.png" />
+  <link rel="icon" type="image/png" sizes="128x128" href="/favicon/favicon-128.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png" />
+  <meta name="application-name" content="Bravus Combat" />
+  <meta name="msapplication-TileColor" content="#050505" />
+  <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="/favicon/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="/favicon/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="/favicon/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="/favicon/mstile-310x310.png" />
+  <meta property="og:title" content="Bravus Combat | Academia de luta em Limeira" />
+  <meta property="og:description" content="Agende sua aula experimental de Muay Thai, Boxe ou Jiu-Jitsu na Bravus Combat." />
+  <meta property="og:image" content="/images/logo-logo-bravus.webp" />
+  <meta property="og:type" content="website" />
+  <title>Bravus Combat | Muay Thai, Boxe e Jiu-Jitsu em Limeira</title>
+  <script>
+    try {
+      document.documentElement.classList.add("js-enabled");
+      const savedTheme = localStorage.getItem("bravus-theme");
+      if (savedTheme === "light") document.documentElement.dataset.theme = "light";
+    } catch {}
+  </script>
+
+  <style>
+    /* =========================================================
+       01. Tokens e reset
+       ========================================================= */
+    :root {
+      --color-black: #050505;
+      --color-ink: #0b0b0b;
+      --color-panel: #111111;
+      --color-panel-soft: #171717;
+      --color-panel-line: rgba(255, 255, 255, 0.12);
+      --color-white: #ffffff;
+      --color-paper: #f4f1e8;
+      --color-muted: #aaa79d;
+      --color-muted-strong: #d5d0c0;
+      --color-yellow: #ffd400;
+      --color-yellow-deep: #d7a600;
+      --color-yellow-soft: rgba(255, 212, 0, 0.16);
+      --color-danger: #b81e1e;
+
+      --font-display: "Arial Black", Impact, system-ui, sans-serif;
+      --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --container: 1180px;
+      --radius-xs: 4px;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --shadow-yellow: 0 0 42px rgba(255, 212, 0, 0.26);
+      --shadow-card: 0 24px 60px rgba(0, 0, 0, 0.36);
+      --ease: cubic-bezier(0.2, 0.9, 0.2, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--color-black);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--color-white);
+      background:
+        radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 20%), rgba(255, 212, 0, 0.10), transparent 24rem),
+        linear-gradient(180deg, #050505 0%, #0b0b0b 48%, #050505 100%);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(180deg, transparent, #000 14%, #000 82%, transparent);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.14;
+      background:
+        repeating-linear-gradient(
+          105deg,
+          transparent 0,
+          transparent 14px,
+          rgba(255, 212, 0, 0.18) 15px,
+          transparent 16px,
+          transparent 58px
+        );
+    }
+
+    html[data-theme="light"] {
+      background: #f7f3e8;
+    }
+
+    html[data-theme="light"] body {
+      color: #0a0a0a;
+      background:
+        radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 20%), rgba(255, 212, 0, 0.20), transparent 24rem),
+        linear-gradient(180deg, #fbf7ec 0%, #ffffff 48%, #f4f1e8 100%);
+    }
+
+    html[data-theme="light"] body::before {
+      opacity: 0.28;
+      background-image:
+        linear-gradient(rgba(5, 5, 5, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(5, 5, 5, 0.04) 1px, transparent 1px);
+    }
+
+    html[data-theme="light"] body::after {
+      opacity: 0.08;
+    }
+
+    html[data-theme="light"] .modalities,
+    html[data-theme="light"] .reasons,
+    html[data-theme="light"] .contact-section {
+      color: #0a0a0a;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(255, 212, 0, 0.16), transparent 22rem),
+        #f7f3e8;
+    }
+
+    html[data-theme="light"] .section-title:not(.dark),
+    html[data-theme="light"] .coach-title,
+    html[data-theme="light"] .modality-card h3,
+    html[data-theme="light"] .reason-card h3,
+    html[data-theme="light"] .audience-card h3,
+    html[data-theme="light"] .info-block h3 {
+      color: #080808;
+    }
+
+    html[data-theme="light"] .section-copy:not(.dark),
+    html[data-theme="light"] .about-copy,
+    html[data-theme="light"] .coach-copy,
+    html[data-theme="light"] .modality-card p,
+    html[data-theme="light"] .reason-card p,
+    html[data-theme="light"] .audience-card p,
+    html[data-theme="light"] .info-block p,
+    html[data-theme="light"] .info-block address {
+      color: #3c3931;
+    }
+
+    html[data-theme="light"] .modality-card,
+    html[data-theme="light"] .reason-card,
+    html[data-theme="light"] .audience-card,
+    html[data-theme="light"] .info-block,
+    html[data-theme="light"] .contact-form,
+    html[data-theme="light"] .stat-card {
+      color: #0a0a0a;
+      background: rgba(255, 255, 255, 0.78);
+      border-color: rgba(5, 5, 5, 0.12);
+      box-shadow: 0 20px 50px rgba(5, 5, 5, 0.08);
+    }
+
+    html[data-theme="light"] .hero-meta li,
+    html[data-theme="light"] .coach-tags span {
+      color: #111111;
+      background: rgba(255, 255, 255, 0.72);
+      border-color: rgba(5, 5, 5, 0.14);
+    }
+
+    html[data-theme="light"] .class-gallery {
+      color: var(--color-white);
+    }
+
+    html[data-theme="light"] .class-gallery .section-title,
+    html[data-theme="light"] .class-gallery .eyebrow {
+      color: var(--color-yellow);
+    }
+
+    html[data-theme="light"] .class-gallery .section-copy {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    svg {
+      display: block;
+      width: 1.15rem;
+      height: 1.15rem;
+      flex: 0 0 auto;
+    }
+
+    ::selection {
+      color: var(--color-black);
+      background: var(--color-yellow);
+    }
+
+    /* =========================================================
+       02. Utilidades
+       ========================================================= */
+    .container {
+      width: min(100% - 2rem, var(--container));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      width: fit-content;
+      margin: 0 0 1rem;
+      color: var(--color-yellow);
+      font-size: 0.82rem;
+      font-weight: 900;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.2rem;
+      height: 2px;
+      background: var(--color-yellow);
+      box-shadow: var(--shadow-yellow);
+    }
+
+    .section {
+      position: relative;
+      padding: 6rem 0;
+      overflow: clip;
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin: 0;
+      color: var(--color-white);
+      font-family: var(--font-display);
+      font-size: 3.15rem;
+      line-height: 0.98;
+      text-transform: uppercase;
+    }
+
+    .section-title.dark {
+      color: var(--color-black);
+    }
+
+    .section-copy {
+      max-width: 720px;
+      margin: 1.15rem 0 0;
+      color: var(--color-muted-strong);
+      font-size: 1.04rem;
+    }
+
+    .section-copy.dark {
+      color: #38352d;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .button {
+      position: relative;
+      isolation: isolate;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      min-height: 3.2rem;
+      padding: 0.9rem 1.15rem;
+      border-radius: var(--radius-xs);
+      border: 1px solid transparent;
+      overflow: hidden;
+      color: var(--color-black);
+      background: var(--color-yellow);
+      box-shadow: 0 0 0 1px rgba(255, 212, 0, 0.42), var(--shadow-yellow);
+      font-size: 0.9rem;
+      font-weight: 950;
+      line-height: 1.15;
+      text-transform: uppercase;
+      transition: transform 220ms var(--ease), box-shadow 220ms var(--ease), background 220ms var(--ease);
+    }
+
+    .button::before {
+      content: "";
+      position: absolute;
+      inset: -120% -40%;
+      z-index: -1;
+      background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.65), transparent 70%);
+      transform: translateX(-70%);
+      transition: transform 700ms var(--ease);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 0 0 1px rgba(255, 212, 0, 0.68), 0 0 54px rgba(255, 212, 0, 0.32);
+    }
+
+    .button:hover::before,
+    .button:focus-visible::before {
+      transform: translateX(70%);
+    }
+
+    .button.secondary {
+      color: var(--color-white);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.20);
+      box-shadow: none;
+      backdrop-filter: blur(16px);
+    }
+
+    .button.secondary:hover,
+    .button.secondary:focus-visible {
+      border-color: rgba(255, 212, 0, 0.72);
+      color: var(--color-yellow);
+      box-shadow: 0 0 26px rgba(255, 212, 0, 0.16);
+    }
+
+    .button.dark {
+      color: var(--color-white);
+      background: var(--color-black);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.26);
+    }
+
+    .button.dark:hover,
+    .button.dark:focus-visible {
+      color: var(--color-yellow);
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--color-yellow);
+      font-weight: 900;
+      text-transform: uppercase;
+      transition: gap 180ms var(--ease), color 180ms var(--ease);
+    }
+
+    .text-link:hover,
+    .text-link:focus-visible {
+      gap: 0.7rem;
+      color: var(--color-white);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 {
+      transition-delay: 120ms;
+    }
+
+    .delay-2 {
+      transition-delay: 220ms;
+    }
+
+    .delay-3 {
+      transition-delay: 320ms;
+    }
+
+    .image-frame {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      min-height: 18rem;
+      margin: 0;
+      border-radius: var(--radius-sm);
+      background:
+        linear-gradient(135deg, rgba(255, 212, 0, 0.24), transparent 42%),
+        linear-gradient(145deg, #1b1b1b, #080808);
+      box-shadow: var(--shadow-card);
+    }
+
+    .image-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(5, 5, 5, 0.05), rgba(5, 5, 5, 0.72)),
+        repeating-linear-gradient(108deg, transparent 0, transparent 16px, rgba(255, 212, 0, 0.12) 17px, transparent 18px);
+      pointer-events: none;
+    }
+
+    .image-frame::after {
+      content: "";
+      position: absolute;
+      inset: auto 1rem 1rem;
+      z-index: 2;
+      height: 3px;
+      background: var(--color-yellow);
+      box-shadow: var(--shadow-yellow);
+      transform-origin: left;
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      transition: transform 700ms var(--ease), filter 700ms var(--ease);
+    }
+
+    .image-frame:hover img {
+      transform: scale(1.06);
+      filter: grayscale(0.25) contrast(1.05);
+    }
+
+    .image-frame.image-missing::before {
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255, 212, 0, 0.22), transparent 28%),
+        linear-gradient(135deg, rgba(255, 212, 0, 0.18), transparent 45%),
+        repeating-linear-gradient(108deg, transparent 0, transparent 16px, rgba(255, 212, 0, 0.12) 17px, transparent 18px);
+    }
+
+    /* =========================================================
+       03. Header
+       ========================================================= */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: var(--scroll-progress, 0%);
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-yellow), #fff07c);
+      box-shadow: var(--shadow-yellow);
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      backdrop-filter: none;
+      transition: background 220ms var(--ease), border-color 220ms var(--ease), transform 220ms var(--ease);
+    }
+
+    .site-header.is-scrolled {
+      background: var(--color-black);
+      border-color: var(--color-yellow);
+    }
+
+    html[data-theme="light"] .site-header {
+      background: transparent;
+    }
+
+    html[data-theme="light"] .site-header.is-scrolled {
+      background: var(--color-white);
+      border-color: #d8d0b8;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 5.4rem;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 4rem;
+      height: 4rem;
+      object-fit: contain;
+      filter: drop-shadow(0 0 18px rgba(255, 212, 0, 0.34));
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-menu-cta {
+      display: none;
+    }
+
+    .nav-links a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.5rem;
+      padding: 0.55rem 0.75rem;
+      border-radius: var(--radius-xs);
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.84rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: color 180ms var(--ease), background 180ms var(--ease), text-shadow 180ms var(--ease);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0.75rem;
+      right: 0.75rem;
+      bottom: 0.42rem;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, var(--color-yellow), #fff4a8, transparent);
+      box-shadow: 0 0 18px rgba(255, 212, 0, 0.44);
+      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: opacity 180ms var(--ease), transform 220ms var(--ease);
+    }
+
+    html[data-theme="light"] .nav-links a {
+      color: rgba(5, 5, 5, 0.72);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--color-yellow);
+      background: rgba(255, 212, 0, 0.09);
+      text-shadow: 0 0 18px rgba(255, 212, 0, 0.24);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .theme-toggle {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 50%;
+      color: var(--color-white);
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(18px);
+      transition: transform 180ms var(--ease), color 180ms var(--ease), background 180ms var(--ease), border-color 180ms var(--ease);
+    }
+
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible {
+      transform: translateY(-2px);
+      color: var(--color-yellow);
+      border-color: rgba(255, 212, 0, 0.62);
+    }
+
+    .theme-toggle .icon-moon {
+      display: none;
+    }
+
+    html[data-theme="light"] .theme-toggle {
+      color: #080808;
+      background: rgba(255, 255, 255, 0.76);
+      border-color: rgba(5, 5, 5, 0.14);
+    }
+
+    html[data-theme="light"] .theme-toggle .icon-sun {
+      display: none;
+    }
+
+    html[data-theme="light"] .theme-toggle .icon-moon {
+      display: block;
+    }
+
+    .menu-toggle {
+      display: none;
+      place-items: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: var(--radius-xs);
+      color: var(--color-white);
+      background:
+        linear-gradient(135deg, rgba(255, 212, 0, 0.12), rgba(255, 255, 255, 0.055)),
+        rgba(5, 5, 5, 0.52);
+      border: 1px solid rgba(255, 212, 0, 0.22);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        0 18px 42px rgba(0, 0, 0, 0.28),
+        0 0 24px rgba(255, 212, 0, 0.10);
+      backdrop-filter: blur(14px);
+      transition: transform 180ms var(--ease), border-color 180ms var(--ease), box-shadow 180ms var(--ease);
+    }
+
+    .menu-toggle:hover,
+    .menu-toggle:focus-visible {
+      border-color: rgba(255, 212, 0, 0.58);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        0 20px 48px rgba(0, 0, 0, 0.34),
+        0 0 34px rgba(255, 212, 0, 0.18);
+      transform: translateY(-2px);
+    }
+
+    html[data-theme="light"] .menu-toggle {
+      color: #080808;
+      background:
+        linear-gradient(135deg, rgba(255, 212, 0, 0.22), rgba(255, 255, 255, 0.70)),
+        rgba(255, 255, 255, 0.76);
+      border-color: rgba(201, 154, 0, 0.24);
+    }
+
+    .menu-toggle .icon-close {
+      display: none;
+    }
+
+    .menu-toggle.is-open .icon-menu {
+      display: none;
+    }
+
+    .menu-toggle.is-open .icon-close {
+      display: block;
+    }
+
+    /* =========================================================
+       04. Hero
+       ========================================================= */
+    .hero {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      min-height: 100svh;
+      padding: 8.4rem 0 5rem;
+      overflow: hidden;
+      color: var(--color-white);
+      background: #050505;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: scale(1.02);
+      filter: brightness(1) saturate(1);
+      transition:
+        opacity 900ms var(--ease),
+        transform 1100ms cubic-bezier(0.16, 1, 0.3, 1),
+        clip-path 980ms cubic-bezier(0.16, 1, 0.3, 1),
+        filter 900ms var(--ease);
+      will-change: opacity, transform, clip-path, filter;
+    }
+
+    .hero-bg-current {
+      opacity: 1;
+      background-image: url("/images/hero-1.webp");
+    }
+
+    .hero-bg-next {
+      opacity: 0;
+      transform: translate3d(0, var(--hero-enter-y, 7%), 0) scale(1.12);
+      clip-path: inset(var(--hero-inset-top, 100%) 0 var(--hero-inset-bottom, 0) 0 round 2.4rem);
+      filter: blur(16px) brightness(1.18) saturate(1.18) contrast(1.06);
+    }
+
+    .hero.is-changing .hero-bg-current {
+      opacity: 0.36;
+      transform: translate3d(0, var(--hero-exit-y, -3%), 0) scale(1.075);
+      filter: blur(2px) brightness(0.82) saturate(0.92);
+    }
+
+    .hero.is-prev .hero-bg-current {
+      --hero-exit-y: 3%;
+    }
+
+    .hero.is-prev .hero-bg-next {
+      --hero-enter-y: -7%;
+      --hero-inset-top: 0;
+      --hero-inset-bottom: 100%;
+    }
+
+    .hero.is-next .hero-bg-next {
+      --hero-enter-y: 7%;
+      --hero-inset-top: 100%;
+      --hero-inset-bottom: 0;
+    }
+
+    .hero.is-changing .hero-bg-next {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1.02);
+      clip-path: inset(0 0 0 0 round 0);
+      filter: blur(0) brightness(1) saturate(1.08) contrast(1.02);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        linear-gradient(90deg, rgba(5, 5, 5, 0.94) 0%, rgba(5, 5, 5, 0.82) 36%, rgba(5, 5, 5, 0.42) 55%, rgba(5, 5, 5, 0.20) 74%, rgba(5, 5, 5, 0.28) 100%),
+        linear-gradient(180deg, rgba(5, 5, 5, 0.18) 0%, rgba(5, 5, 5, 0.20) 46%, rgba(5, 5, 5, 0.78) 100%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "BRAVUS";
+      position: absolute;
+      left: clamp(1rem, 5vw, 4rem);
+      bottom: -2.6rem;
+      z-index: 0;
+      color: rgba(255, 255, 255, 0.055);
+      font-family: var(--font-display);
+      font-size: clamp(5.2rem, 13vw, 12rem);
+      line-height: 1;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 80% 30%, rgba(255, 212, 0, 0.09), transparent 15rem),
+        radial-gradient(circle at 18% 52%, rgba(255, 212, 0, 0.14), transparent 18rem);
+      mix-blend-mode: screen;
+    }
+
+    .hero-overlay::before {
+      content: "";
+      position: absolute;
+      inset: -18%;
+      opacity: 0;
+      background:
+        radial-gradient(ellipse at 82% 52%, rgba(255, 212, 0, 0.28), transparent 28%),
+        radial-gradient(ellipse at 54% 50%, rgba(255, 255, 255, 0.16), transparent 34%);
+      filter: blur(18px);
+      transform: translate3d(0, var(--hero-flare-start, 18%), 0) scale(0.96);
+      transition: opacity 620ms var(--ease), transform 980ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero.is-prev .hero-overlay::before {
+      --hero-flare-start: -18%;
+      --hero-flare-end: 18%;
+    }
+
+    .hero.is-next .hero-overlay::before {
+      --hero-flare-start: 18%;
+      --hero-flare-end: -18%;
+    }
+
+    .hero.is-changing .hero-overlay::before {
+      opacity: 0.72;
+      transform: translate3d(0, var(--hero-flare-end, -18%), 0) scale(1.04);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) clamp(3.7rem, 6vw, 4.6rem);
+      align-items: center;
+      gap: clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .hero-content {
+      max-width: 650px;
+      transition: opacity 360ms var(--ease), transform 360ms var(--ease), filter 360ms var(--ease);
+    }
+
+    .hero-content.is-switching {
+      opacity: 0;
+      transform: translateY(18px) scale(0.985);
+      filter: blur(8px);
+    }
+
+    .hero.is-prev .hero-content.is-switching {
+      transform: translateY(-18px) scale(0.985);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      width: fit-content;
+      margin-bottom: 1.25rem;
+      padding: 0.46rem 0.68rem;
+      border: 1px solid rgba(255, 212, 0, 0.38);
+      border-radius: 999px;
+      color: var(--color-yellow);
+      background: rgba(255, 212, 0, 0.08);
+      font-size: 0.78rem;
+      font-weight: 950;
+      text-transform: uppercase;
+      box-shadow: 0 0 32px rgba(255, 212, 0, 0.10);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-badge svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .hero-logo {
+      width: 6.3rem;
+      height: auto;
+      display: none;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 24px rgba(255, 212, 0, 0.42));
+    }
+
+    .hero-title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2.55rem, 5.8vw, 3.85rem);
+      line-height: 0.94;
+      text-transform: uppercase;
+      text-wrap: balance;
+      max-width: 25ch;
+    }
+
+    .hero-title span {
+      display: block;
+      color: var(--color-yellow);
+      text-shadow: 0 0 38px rgba(255, 212, 0, 0.30);
+    }
+
+    .hero-lead {
+      max-width: 620px;
+      margin: 1.35rem 0 0;
+      color: var(--color-muted-strong);
+      font-size: 1.08rem;
+      text-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin: 1.5rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-meta li {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.48rem;
+      min-height: 2.35rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.86);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(16px);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 2rem;
+    }
+
+    .hero-controls {
+      position: relative;
+      display: grid;
+      gap: 0.85rem;
+      justify-self: end;
+      align-self: center;
+      width: max-content;
+    }
+
+    .hero-arrow {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      place-items: center;
+      width: 3.7rem;
+      height: 3.7rem;
+      padding: 0;
+      border-radius: 50%;
+      color: var(--color-black);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.62), transparent 35%),
+        linear-gradient(145deg, #ffe86c 0%, var(--color-yellow) 54%, #d8a800 100%);
+      border: 1px solid rgba(255, 230, 72, 0.82);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.70),
+        0 0 0 0.42rem rgba(255, 212, 0, 0.08),
+        0 20px 48px rgba(0, 0, 0, 0.34),
+        0 0 44px rgba(255, 212, 0, 0.24);
+      overflow: hidden;
+      transition: transform 220ms var(--ease), box-shadow 220ms var(--ease), border-color 220ms var(--ease);
+    }
+
+    .hero-arrow::before {
+      content: "";
+      position: absolute;
+      inset: -60% -35%;
+      z-index: -1;
+      background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, 0.72) 48%, transparent 64%);
+      transform: translateX(-62%) rotate(8deg);
+      transition: transform 560ms var(--ease);
+    }
+
+    .hero-arrow svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      filter: drop-shadow(0 8px 14px rgba(5, 5, 5, 0.24));
+    }
+
+    .hero-arrow-prev svg {
+      transform: rotate(-90deg);
+    }
+
+    .hero-arrow-next svg {
+      transform: rotate(90deg);
+    }
+
+    .hero-arrow:hover,
+    .hero-arrow:focus-visible {
+      border-color: rgba(255, 255, 255, 0.82);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.82),
+        0 0 0 0.55rem rgba(255, 212, 0, 0.11),
+        0 26px 62px rgba(0, 0, 0, 0.38),
+        0 0 58px rgba(255, 212, 0, 0.34);
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    .hero-arrow-next:hover,
+    .hero-arrow-next:focus-visible {
+      transform: translateY(3px) scale(1.03);
+    }
+
+    .hero-arrow:hover::before,
+    .hero-arrow:focus-visible::before {
+      transform: translateX(62%) rotate(8deg);
+    }
+
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 1.5rem;
+      display: none;
+      place-items: center;
+      width: 2.5rem;
+      height: 3.35rem;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 999px;
+      transform: translateX(-50%);
+    }
+
+    .scroll-cue::before {
+      content: "";
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 50%;
+      background: var(--color-yellow);
+      animation: scrollDot 1500ms var(--ease) infinite;
+    }
+
+    @keyframes scrollDot {
+      0% {
+        transform: translateY(-0.65rem);
+        opacity: 0;
+      }
+      35% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0.75rem);
+        opacity: 0;
+      }
+    }
+
+    @keyframes menuItemIn {
+      from {
+        opacity: 0;
+        transform: translateY(-0.45rem);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scheduleDayIn {
+      from {
+        opacity: 0;
+        transform: translateY(0.6rem) scale(0.985);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes galleryMarquee {
+      from {
+        transform: translate3d(0, 0, 0);
+      }
+
+      to {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    /* =========================================================
+       05. Destaques
+       ========================================================= */
+    .highlight-strip {
+      position: relative;
+      z-index: 2;
+      margin-top: -0.2rem;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid rgba(255, 212, 0, 0.22);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: rgba(10, 10, 10, 0.88);
+      box-shadow: var(--shadow-card);
+      backdrop-filter: blur(18px);
+    }
+
+    .highlight-item {
+      position: relative;
+      min-height: 9.2rem;
+      padding: 1.35rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.11);
+    }
+
+    .highlight-item:last-child {
+      border-right: 0;
+    }
+
+    .highlight-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--color-yellow-soft), transparent 45%);
+      opacity: 0;
+      transition: opacity 240ms var(--ease);
+    }
+
+    .highlight-item:hover::before {
+      opacity: 1;
+    }
+
+    .highlight-item svg {
+      position: relative;
+      width: 1.55rem;
+      height: 1.55rem;
+      color: var(--color-yellow);
+      margin-bottom: 1.1rem;
+    }
+
+    .highlight-item strong {
+      position: relative;
+      display: block;
+      color: var(--color-white);
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .highlight-item span {
+      position: relative;
+      display: block;
+      margin-top: 0.55rem;
+      color: var(--color-muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    /* =========================================================
+       06. Sobre
+       ========================================================= */
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.78fr);
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .about-copy {
+      display: grid;
+      gap: 1.1rem;
+      margin-top: 1.45rem;
+      color: var(--color-muted-strong);
+      font-size: 1rem;
+    }
+
+    .about-copy p {
+      margin: 0;
+    }
+
+    .stat-stack {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .stat-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 8rem;
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .stat-card::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 3px;
+      background: var(--color-yellow);
+      transform: scaleX(0.55);
+      transform-origin: left;
+      transition: transform 260ms var(--ease);
+    }
+
+    .stat-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .stat-number {
+      display: block;
+      color: var(--color-yellow);
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .stat-label {
+      display: block;
+      margin-top: 0.45rem;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.86rem;
+      line-height: 1.35;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .about-media {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .about-video-frame {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      width: 100%;
+      min-height: clamp(20rem, 34vw, 28rem);
+      margin: 0;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 212, 0, 0.28);
+      background:
+        radial-gradient(circle at 72% 18%, rgba(255, 212, 0, 0.24), transparent 24rem),
+        linear-gradient(145deg, #161616, #050505);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 34px 92px rgba(0, 0, 0, 0.52),
+        0 0 76px rgba(255, 212, 0, 0.16);
+      transform-style: preserve-3d;
+    }
+
+    .about-video-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(255, 212, 0, 0.22), transparent 28%),
+        linear-gradient(180deg, rgba(5, 5, 5, 0.02) 0%, rgba(5, 5, 5, 0.08) 48%, rgba(5, 5, 5, 0.72) 100%);
+      pointer-events: none;
+    }
+
+    .about-video-frame::after {
+      content: "";
+      position: absolute;
+      inset: auto 1rem 1rem;
+      z-index: 3;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, var(--color-yellow), #fff2a8, var(--color-yellow), transparent);
+      box-shadow:
+        0 0 26px rgba(255, 212, 0, 0.58),
+        0 -22px 70px rgba(255, 212, 0, 0.18);
+      pointer-events: none;
+    }
+
+    .about-video-frame video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.08) contrast(1.08) brightness(0.92);
+      transform: scale(1.045);
+    }
+
+    .about-video-frame .video-shine {
+      position: absolute;
+      inset: -60% -38%;
+      z-index: 4;
+      background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.30) 48%, transparent 60%);
+      opacity: 0;
+      transform: translateX(-55%) rotate(8deg);
+      pointer-events: none;
+    }
+
+    .video-audio-control {
+      position: absolute;
+      left: 1rem;
+      right: auto;
+      bottom: 1rem;
+      z-index: 5;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 0.58rem;
+      width: 3rem;
+      min-height: 12.35rem;
+      padding: 0.5rem 0.38rem;
+      border: 1px solid rgba(255, 212, 0, 0.24);
+      border-radius: 999px;
+      background:
+        linear-gradient(180deg, rgba(255, 212, 0, 0.12), transparent 44%),
+        rgba(5, 5, 5, 0.58);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 14px 32px rgba(0, 0, 0, 0.36),
+        0 0 22px rgba(255, 212, 0, 0.1);
+      backdrop-filter: blur(14px);
+      opacity: 0;
+      pointer-events: none;
+      transform: translate3d(-0.35rem, 0.25rem, 0) scale(0.96);
+      transition: opacity 180ms var(--ease), transform 220ms var(--ease);
+    }
+
+    .about-video-frame:hover .video-audio-control,
+    .about-video-frame:focus-within .video-audio-control {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateZ(0);
+    }
+
+    .video-control-button,
+    .video-audio-toggle {
+      display: grid;
+      place-items: center;
+      flex: 0 0 2.16rem;
+      width: 2.16rem;
+      height: 2.16rem;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      color: var(--color-black);
+      background: var(--color-yellow);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.42),
+        0 10px 22px rgba(255, 212, 0, 0.22);
+      cursor: pointer;
+      transition: transform 220ms var(--ease), box-shadow 220ms var(--ease), filter 220ms var(--ease);
+    }
+
+    .video-control-button {
+      color: var(--color-white);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
+
+    .video-control-button:hover,
+    .video-control-button:focus-visible,
+    .video-audio-toggle:hover,
+    .video-audio-toggle:focus-visible {
+      filter: brightness(1.08);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        0 12px 26px rgba(255, 212, 0, 0.28),
+        0 0 18px rgba(255, 212, 0, 0.2);
+    }
+
+    .video-control-button:hover,
+    .video-control-button:focus-visible {
+      color: var(--color-black);
+      background: var(--color-yellow);
+    }
+
+    .video-control-button svg,
+    .video-audio-toggle svg {
+      grid-area: 1 / 1;
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .video-play-toggle .icon-play {
+      display: none;
+    }
+
+    .video-play-toggle .icon-pause {
+      display: block;
+    }
+
+    .about-video-frame.is-video-paused .video-play-toggle .icon-play {
+      display: block;
+    }
+
+    .about-video-frame.is-video-paused .video-play-toggle .icon-pause {
+      display: none;
+    }
+
+    .video-audio-toggle .icon-volume-on {
+      display: none;
+    }
+
+    .video-audio-toggle .icon-volume-off {
+      display: block;
+    }
+
+    .about-video-frame.is-audio-on .video-audio-toggle .icon-volume-on {
+      display: block;
+    }
+
+    .about-video-frame.is-audio-on .video-audio-toggle .icon-volume-off {
+      display: none;
+    }
+
+    .video-volume {
+      --volume-fill: 65%;
+      flex: 0 0 5.75rem;
+      width: 0.34rem;
+      height: 5.75rem;
+      border: 0;
+      border-radius: 999px;
+      outline: 0;
+      appearance: none;
+      -webkit-appearance: none;
+      writing-mode: vertical-lr;
+      direction: rtl;
+      background: linear-gradient(0deg, var(--color-yellow) var(--volume-fill), rgba(255, 255, 255, 0.18) var(--volume-fill));
+      box-shadow:
+        inset 0 1px 4px rgba(0, 0, 0, 0.62),
+        0 0 14px rgba(255, 212, 0, 0.12);
+      cursor: pointer;
+    }
+
+    .video-volume::-webkit-slider-thumb {
+      width: 0.82rem;
+      height: 0.82rem;
+      border: 2px solid var(--color-yellow);
+      border-radius: 50%;
+      appearance: none;
+      -webkit-appearance: none;
+      background: #fff3a8;
+      box-shadow:
+        0 0 0 4px rgba(255, 212, 0, 0.1),
+        0 0 18px rgba(255, 212, 0, 0.42);
+    }
+
+    .video-volume::-moz-range-thumb {
+      width: 0.82rem;
+      height: 0.82rem;
+      border: 2px solid var(--color-yellow);
+      border-radius: 50%;
+      background: #fff3a8;
+      box-shadow:
+        0 0 0 4px rgba(255, 212, 0, 0.1),
+        0 0 18px rgba(255, 212, 0, 0.42);
+    }
+
+    .about-video-frame.is-audio-on .video-audio-control {
+      border-color: rgba(255, 212, 0, 0.42);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        0 16px 34px rgba(0, 0, 0, 0.4),
+        0 0 28px rgba(255, 212, 0, 0.16);
+    }
+
+    @media (hover: none) {
+      .video-audio-control {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateZ(0);
+      }
+    }
+
+    .about-media.reveal .about-video-frame {
+      opacity: 0;
+      clip-path: inset(12% 0 12% 0 round var(--radius-sm));
+      filter: blur(14px) saturate(1.22);
+      transform: perspective(960px) rotateY(-10deg) translate3d(2.2rem, 2.4rem, 0) scale(0.94);
+      transition:
+        opacity 900ms var(--ease),
+        clip-path 1100ms cubic-bezier(0.16, 1, 0.3, 1),
+        filter 900ms var(--ease),
+        transform 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+      transition-delay: 120ms;
+    }
+
+    .about-media.reveal.is-visible .about-video-frame {
+      opacity: 1;
+      clip-path: inset(0 0 0 0 round var(--radius-sm));
+      filter: blur(0) saturate(1);
+      transform: perspective(960px) rotateY(0) translate3d(0, 0, 0) scale(1);
+    }
+
+    .about-media.reveal.is-visible .about-video-frame .video-shine {
+      animation: videoShine 1350ms 260ms var(--ease) both;
+    }
+
+    @keyframes videoShine {
+      0% {
+        opacity: 0;
+        transform: translateX(-55%) rotate(8deg);
+      }
+
+      32% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateX(55%) rotate(8deg);
+      }
+    }
+
+    .quote-card {
+      position: relative;
+      padding: 1.3rem;
+      border-radius: var(--radius-sm);
+      color: var(--color-black);
+      background: var(--color-yellow);
+      box-shadow: var(--shadow-yellow);
+    }
+
+    .quote-card strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .quote-card p {
+      margin: 0.85rem 0 0;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    /* =========================================================
+       07. Galeria
+       ========================================================= */
+    .class-gallery {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 5.3rem 0;
+      background:
+        linear-gradient(180deg, rgba(255, 212, 0, 0.035), transparent 28%, rgba(255, 212, 0, 0.04)),
+        repeating-linear-gradient(112deg, transparent 0, transparent 22px, rgba(255, 212, 0, 0.045) 23px, transparent 24px),
+        #050505;
+    }
+
+    .class-gallery::before,
+    .class-gallery::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 212, 0, 0.58), transparent);
+      box-shadow: 0 0 28px rgba(255, 212, 0, 0.24);
+      pointer-events: none;
+    }
+
+    .class-gallery::before {
+      top: 0;
+    }
+
+    .class-gallery::after {
+      bottom: 0;
+    }
+
+    .gallery-head {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2.1rem;
+    }
+
+    .gallery-head .section-copy {
+      max-width: 34rem;
+      margin-top: 0;
+    }
+
+    .gallery-rails {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: clamp(0.8rem, 1.4vw, 1.2rem);
+      width: 100vw;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+    }
+
+    .gallery-row {
+      --gallery-gap: clamp(0.75rem, 1.2vw, 1.05rem);
+      overflow: hidden;
+    }
+
+    .gallery-marquee {
+      display: flex;
+      width: max-content;
+      animation: galleryMarquee 64s linear infinite;
+      will-change: transform;
+    }
+
+    .gallery-row.reverse .gallery-marquee {
+      animation-direction: reverse;
+      animation-duration: 72s;
+    }
+
+    .gallery-row:hover .gallery-marquee,
+    .gallery-row:focus-within .gallery-marquee {
+      animation-play-state: paused;
+    }
+
+    .gallery-marquee-group {
+      display: flex;
+      flex: 0 0 auto;
+      gap: var(--gallery-gap);
+      padding-right: var(--gallery-gap);
+    }
+
+    .gallery-photo {
+      position: relative;
+      overflow: hidden;
+      flex: 0 0 auto;
+      width: clamp(13rem, 23vw, 22rem);
+      aspect-ratio: 4 / 3;
+      margin: 0;
+      border: 1px solid rgba(255, 212, 0, 0.24);
+      border-radius: var(--radius-sm);
+      background: #0b0b0b;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 22px 58px rgba(0, 0, 0, 0.46),
+        0 0 34px rgba(255, 212, 0, 0.08);
+      transform: translateZ(0);
+    }
+
+    .gallery-photo::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(5, 5, 5, 0.04), rgba(5, 5, 5, 0.18) 58%, rgba(5, 5, 5, 0.62)),
+        linear-gradient(115deg, rgba(255, 212, 0, 0.16), transparent 42%);
+      opacity: 0.86;
+      pointer-events: none;
+      transition: opacity 220ms var(--ease);
+    }
+
+    .gallery-photo::after {
+      content: "";
+      position: absolute;
+      left: 0.85rem;
+      right: 0.85rem;
+      bottom: 0.8rem;
+      z-index: 2;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, var(--color-yellow), #fff4a8, transparent);
+      box-shadow: 0 0 18px rgba(255, 212, 0, 0.52);
+      opacity: 0.76;
+      pointer-events: none;
+    }
+
+    .gallery-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.08) contrast(1.06);
+      transform: scale(1.025);
+      transition: transform 360ms var(--ease), filter 360ms var(--ease);
+    }
+
+    .gallery-photo:hover::before,
+    .gallery-photo:focus-within::before {
+      opacity: 0.52;
+    }
+
+    .gallery-photo:hover img,
+    .gallery-photo:focus-within img {
+      filter: saturate(1.18) contrast(1.12);
+      transform: scale(1.08);
+    }
+
+    /* =========================================================
+       08. Modalidades
+       ========================================================= */
+    .modalities {
+      background:
+        linear-gradient(180deg, rgba(255, 212, 0, 0.05), transparent 42%),
+        var(--color-black);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .section-head .section-copy {
+      max-width: 480px;
+      margin-top: 0;
+    }
+
+    .modality-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .modality-card {
+      position: relative;
+      min-height: 34rem;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      background:
+        linear-gradient(180deg, rgba(255, 212, 0, 0.06), transparent 42%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018) 44%),
+        rgba(12, 12, 12, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        0 30px 82px rgba(0, 0, 0, 0.46),
+        0 0 46px rgba(255, 212, 0, 0.07);
+      transform-style: preserve-3d;
+      transition: transform 260ms var(--ease), border-color 260ms var(--ease), box-shadow 260ms var(--ease);
+    }
+
+    .modality-card:hover {
+      border-color: rgba(255, 212, 0, 0.48);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        0 36px 96px rgba(0, 0, 0, 0.54),
+        0 0 64px rgba(255, 212, 0, 0.16);
+    }
+
+    .modality-card .image-frame {
+      height: clamp(18rem, 25vw, 20.5rem);
+      min-height: 0;
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+      background: #050505;
+      box-shadow:
+        inset 0 -1px 0 rgba(255, 212, 0, 0.26),
+        0 24px 58px rgba(0, 0, 0, 0.50),
+        0 0 52px rgba(255, 212, 0, 0.12);
+    }
+
+    .modality-card .modality-image {
+      height: clamp(18rem, 25vw, 20.5rem);
+      min-height: 0;
+      padding: 0;
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    }
+
+    .modality-card .modality-image::before {
+      z-index: 2;
+      background:
+        radial-gradient(circle at 50% 38%, rgba(255, 212, 0, 0.22), transparent 46%),
+        linear-gradient(180deg, rgba(5, 5, 5, 0.02) 0%, rgba(5, 5, 5, 0.16) 55%, rgba(5, 5, 5, 0.72) 100%);
+      opacity: 0.9;
+    }
+
+    .modality-card .modality-image::after {
+      inset: auto 0 0;
+      z-index: 3;
+      height: 6rem;
+      background:
+        linear-gradient(180deg, transparent, rgba(5, 5, 5, 0.78)),
+        linear-gradient(90deg, transparent 0 8%, rgba(255, 212, 0, 0.72) 8% 92%, transparent 92%);
+      background-size: 100% 100%, 100% 2px;
+      background-position: 0 0, 0 100%;
+      background-repeat: no-repeat;
+      box-shadow: 0 18px 48px rgba(255, 212, 0, 0.12);
+    }
+
+    .modality-card .modality-image img {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      object-fit: cover;
+      object-position: center;
+      border-radius: inherit;
+      filter: saturate(1.08) contrast(1.06) brightness(0.96);
+      transform: scale(1.28);
+      transform-origin: center;
+      transition: transform 760ms var(--ease), filter 760ms var(--ease);
+    }
+
+    .modality-card .modality-image:hover img {
+      transform: scale(1.36);
+      filter: saturate(1.16) contrast(1.10) brightness(1.03);
+    }
+
+    .modality-content {
+      position: relative;
+      display: grid;
+      gap: 1rem;
+      padding: 1.35rem;
+    }
+
+    .modality-icon {
+      display: grid;
+      place-items: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: var(--radius-xs);
+      color: var(--color-black);
+      background: var(--color-yellow);
+      box-shadow: var(--shadow-yellow);
+    }
+
+    .modality-card h3 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .modality-card h3 span {
+      display: block;
+      margin-top: 0.3rem;
+      color: var(--color-yellow);
+      font-family: var(--font-body);
+      font-size: 0.83rem;
+      font-weight: 950;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .modality-card p {
+      margin: 0;
+      color: var(--color-muted-strong);
+      font-size: 0.95rem;
+    }
+
+    .modality-card .text-link {
+      margin-top: auto;
+    }
+
+    /* =========================================================
+       08. Kids e treinador
+       ========================================================= */
+    .light-section {
+      color: var(--color-black);
+      background:
+        linear-gradient(112deg, rgba(255, 212, 0, 0.14), transparent 40%),
+        var(--color-paper);
+    }
+
+    .kids-layout {
+      display: grid;
+      grid-template-columns: minmax(20rem, 0.85fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 3rem;
+    }
+
+    #kids .image-frame {
+      isolation: isolate;
+      border: 1px solid transparent;
+      background:
+        linear-gradient(#070707, #070707) padding-box,
+        linear-gradient(135deg, rgba(255, 244, 168, 0.86), rgba(255, 212, 0, 0.32) 34%, rgba(255, 255, 255, 0.12) 54%, rgba(255, 212, 0, 0.74)) border-box;
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+        inset 0 0 46px rgba(255, 212, 0, 0.10),
+        0 22px 54px rgba(5, 5, 5, 0.20),
+        0 0 0 1px rgba(255, 212, 0, 0.18),
+        0 0 56px rgba(255, 212, 0, 0.20);
+    }
+
+    #kids .image-frame::before {
+      background:
+        linear-gradient(180deg, rgba(5, 5, 5, 0.02), rgba(5, 5, 5, 0.42)),
+        radial-gradient(circle at 20% 18%, rgba(255, 244, 168, 0.22), transparent 20rem),
+        repeating-linear-gradient(108deg, transparent 0, transparent 16px, rgba(255, 212, 0, 0.10) 17px, transparent 18px);
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 244, 168, 0.18),
+        inset 0 0 0 4px rgba(255, 212, 0, 0.05);
+    }
+
+    #kids .image-frame::after {
+      inset: auto 1rem 0.95rem;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, #fff4a8 8%, var(--color-yellow) 50%, #fff4a8 92%, transparent);
+      box-shadow:
+        0 0 18px rgba(255, 212, 0, 0.66),
+        0 -18px 54px rgba(255, 212, 0, 0.18);
+    }
+
+    #kids .image-frame img {
+      filter: saturate(1.08) contrast(1.04);
+    }
+
+    .values-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1.5rem 0 0;
+    }
+
+    .value-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.25rem;
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      color: var(--color-black);
+      background: rgba(5, 5, 5, 0.08);
+      border: 1px solid rgba(5, 5, 5, 0.10);
+      font-size: 0.86rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .kids-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    .mini-card {
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(5, 5, 5, 0.10);
+    }
+
+    .mini-card h3 {
+      margin: 0 0 0.5rem;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: #38352d;
+      font-size: 0.93rem;
+    }
+
+    .coach-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .coach-title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 4rem;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .coach-title span {
+      color: var(--color-yellow);
+    }
+
+    .coach-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1.2rem 0 0;
+    }
+
+    .coach-tags span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.25rem;
+      padding: 0.42rem 0.7rem;
+      border-radius: 999px;
+      color: var(--color-yellow);
+      background: rgba(255, 212, 0, 0.08);
+      border: 1px solid rgba(255, 212, 0, 0.24);
+      font-size: 0.82rem;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .coach-copy {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.35rem;
+      color: var(--color-muted-strong);
+    }
+
+    .coach-copy p {
+      margin: 0;
+    }
+
+    /* =========================================================
+       09. Por que treinar
+       ========================================================= */
+    .reasons {
+      background:
+        radial-gradient(circle at 18% 20%, rgba(255, 212, 0, 0.13), transparent 22rem),
+        var(--color-black);
+    }
+
+    .reason-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 2.3rem;
+    }
+
+    .reason-card {
+      position: relative;
+      min-height: 13rem;
+      isolation: isolate;
+      padding: 1.45rem;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(255, 212, 0, 0.16), transparent 34%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025) 42%),
+        rgba(12, 12, 12, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        0 22px 56px rgba(0, 0, 0, 0.38),
+        0 0 34px rgba(255, 212, 0, 0.06);
+      transition: transform 220ms var(--ease), border-color 220ms var(--ease), background 220ms var(--ease), box-shadow 220ms var(--ease);
+    }
+
+    .reason-card::before {
+      content: attr(data-index);
+      position: absolute;
+      right: -0.35rem;
+      bottom: -1.05rem;
+      z-index: -1;
+      color: rgba(255, 255, 255, 0.055);
+      font-family: var(--font-display);
+      font-size: 5.4rem;
+      line-height: 1;
+    }
+
+    .reason-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(120deg, transparent 0 34%, rgba(255, 255, 255, 0.18) 48%, transparent 62%),
+        radial-gradient(circle at 84% 18%, rgba(255, 255, 255, 0.13), transparent 24%);
+      opacity: 0;
+      transform: translateX(-18%);
+      transition: opacity 220ms var(--ease), transform 420ms var(--ease);
+      pointer-events: none;
+    }
+
+    .reason-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 212, 0, 0.52);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        0 28px 76px rgba(0, 0, 0, 0.48),
+        0 0 48px rgba(255, 212, 0, 0.16);
+    }
+
+    .reason-card:hover::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reason-card svg {
+      position: relative;
+      width: 1.55rem;
+      height: 1.55rem;
+      color: var(--color-yellow);
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 14px rgba(255, 212, 0, 0.42));
+    }
+
+    .reason-card h3 {
+      position: relative;
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .reason-card p {
+      position: relative;
+      margin: 0.75rem 0 0;
+      color: var(--color-muted-strong);
+      font-size: 0.94rem;
+    }
+
+    .reason-card:nth-child(odd) {
+      color: var(--color-black);
+      background:
+        radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.58), transparent 36%),
+        linear-gradient(145deg, #ffe86a 0%, var(--color-yellow) 46%, #d8a800 100%);
+      border-color: rgba(255, 212, 0, 0.72);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.62),
+        0 26px 70px rgba(255, 212, 0, 0.20),
+        0 18px 46px rgba(0, 0, 0, 0.34);
+    }
+
+    .reason-card:nth-child(odd)::before {
+      color: rgba(5, 5, 5, 0.14);
+    }
+
+    .reason-card:nth-child(odd) svg,
+    .reason-card:nth-child(odd) h3,
+    .reason-card:nth-child(odd) p {
+      color: var(--color-black);
+    }
+
+    .reason-card:nth-child(odd) svg {
+      filter: drop-shadow(0 10px 18px rgba(5, 5, 5, 0.22));
+    }
+
+    .reason-card:nth-child(odd):hover {
+      border-color: rgba(255, 255, 255, 0.68);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.72),
+        0 32px 82px rgba(255, 212, 0, 0.28),
+        0 20px 50px rgba(0, 0, 0, 0.38);
+    }
+
+    /* =========================================================
+       10. Horários
+       ========================================================= */
+    .schedule-section {
+      position: relative;
+      color: var(--color-black);
+      overflow: hidden;
+      background: #050505;
+    }
+
+    .schedule-iris-bg {
+      position: absolute;
+      inset: -18%;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.34), transparent 12rem),
+        radial-gradient(circle at 12% 18%, rgba(5, 5, 5, 0.18), transparent 16rem),
+        linear-gradient(135deg, #ffd400 0%, #ffd400 48%, #f3bf00 48%, #ffe35a 100%);
+      transform: translateZ(0);
+    }
+
+    .schedule-iris-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.18;
+      background:
+        repeating-linear-gradient(112deg, transparent 0, transparent 24px, rgba(5, 5, 5, 0.22) 25px, transparent 26px),
+        radial-gradient(circle at 50% 50%, transparent 0 12rem, rgba(5, 5, 5, 0.14) 24rem, transparent 44rem);
+    }
+
+    .schedule-section::before {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      z-index: 1;
+      height: 6rem;
+      background:
+        linear-gradient(145deg, transparent 0 34%, rgba(5, 5, 5, 0.16) 34% 35%, transparent 35%),
+        linear-gradient(180deg, transparent, rgba(5, 5, 5, 0.12));
+      pointer-events: none;
+    }
+
+    .schedule-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .schedule-section .eyebrow {
+      color: var(--color-black);
+    }
+
+    .schedule-section .eyebrow::before {
+      background: var(--color-black);
+      box-shadow: none;
+    }
+
+    .schedule-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .script-word {
+      display: inline-block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+    }
+
+    .schedule-table-panel {
+      margin-top: 2.5rem;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(5, 5, 5, 0.22);
+      background:
+        linear-gradient(135deg, rgba(255, 212, 0, 0.16), transparent 38%),
+        var(--color-black);
+      box-shadow: 0 28px 80px rgba(5, 5, 5, 0.28);
+    }
+
+    .schedule-panel-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.1rem;
+      color: var(--color-white);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .schedule-panel-top strong {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--color-yellow);
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .schedule-panel-top strong::before {
+      content: "";
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
+      background: var(--color-yellow);
+      box-shadow: var(--shadow-yellow);
+    }
+
+    .schedule-panel-top span {
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 0.9rem;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .schedule-mobile-filter {
+      display: none;
+    }
+
+    .schedule-table-scroll {
+      overflow-x: auto;
+      padding: 0.75rem;
+      scrollbar-color: var(--color-yellow) rgba(255, 255, 255, 0.12);
+      scrollbar-width: thin;
+    }
+
+    .schedule-table-scroll::-webkit-scrollbar {
+      height: 0.72rem;
+    }
+
+    .schedule-table-scroll::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+    }
+
+    .schedule-table-scroll::-webkit-scrollbar-thumb {
+      background: var(--color-yellow);
+      border-radius: 999px;
+    }
+
+    .schedule-table {
+      width: 100%;
+      min-width: 900px;
+      border-collapse: separate;
+      border-spacing: 0.55rem;
+      table-layout: fixed;
+    }
+
+    .schedule-table caption {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .schedule-table th {
+      height: 3.25rem;
+      padding: 0.6rem 0.5rem;
+      border-radius: var(--radius-xs);
+      color: var(--color-black);
+      background: var(--color-yellow);
+      border: 1px solid rgba(5, 5, 5, 0.25);
+      box-shadow: 0 10px 24px rgba(255, 212, 0, 0.20);
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .schedule-table td {
+      vertical-align: top;
+      padding: 0;
+    }
+
+    .schedule-day-track {
+      display: flex;
+      flex-direction: column;
+      gap: 0.62rem;
+      min-height: 31rem;
+      padding: 0.78rem;
+      border-radius: var(--radius-xs);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 242, 232, 0.96)),
+        var(--color-white);
+      border: 1px solid rgba(5, 5, 5, 0.12);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.66), 0 16px 36px rgba(5, 5, 5, 0.15);
+    }
+
+    .schedule-class {
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      min-height: 3.35rem;
+      padding: 0.46rem 0.35rem;
+      border-radius: var(--radius-xs);
+      color: var(--color-yellow);
+      background:
+        linear-gradient(145deg, rgba(255, 212, 0, 0.10), transparent 42%),
+        #070707;
+      border: 1px solid rgba(255, 212, 0, 0.25);
+      box-shadow: 0 12px 22px rgba(5, 5, 5, 0.22);
+      line-height: 1.05;
+      text-align: center;
+      transition: transform 180ms var(--ease), box-shadow 180ms var(--ease), border-color 180ms var(--ease);
+    }
+
+    .schedule-class:hover,
+    .schedule-class:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(255, 212, 0, 0.72);
+      box-shadow: 0 16px 30px rgba(5, 5, 5, 0.26), 0 0 24px rgba(255, 212, 0, 0.20);
+    }
+
+    .schedule-class .class-time {
+      color: var(--color-white);
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      line-height: 1;
+    }
+
+    .schedule-class .class-name {
+      margin-top: 0.16rem;
+      color: var(--color-yellow);
+      font-size: 0.73rem;
+      font-weight: 950;
+      line-height: 1.05;
+    }
+
+    .schedule-class.kids {
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.10), transparent 45%),
+        #111111;
+      border-color: rgba(255, 212, 0, 0.42);
+    }
+
+    .schedule-class.boxe {
+      background:
+        linear-gradient(145deg, rgba(255, 212, 0, 0.14), transparent 44%),
+        #080808;
+    }
+
+    .schedule-class.jiu {
+      background:
+        linear-gradient(145deg, rgba(255, 212, 0, 0.18), transparent 40%),
+        #131006;
+    }
+
+    .schedule-separator {
+      display: block;
+      width: 76%;
+      height: 2px;
+      margin: 0.55rem auto;
+      border-radius: 999px;
+      background: rgba(5, 5, 5, 0.56);
+    }
+
+    .schedule-spacer {
+      flex: 1 1 auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-content: center;
+      gap: 0.42rem;
+      min-height: 7.4rem;
+      padding: 0.3rem 0;
+    }
+
+    .schedule-spacer span {
+      display: grid;
+      place-items: center;
+      min-height: 2rem;
+      padding: 0.25rem;
+      border-radius: var(--radius-xs);
+      color: rgba(5, 5, 5, 0.58);
+      background:
+        linear-gradient(145deg, rgba(255, 212, 0, 0.10), transparent 46%),
+        rgba(5, 5, 5, 0.055);
+      border: 1px dashed rgba(5, 5, 5, 0.22);
+      font-family: var(--font-display);
+      font-size: 0.66rem;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .schedule-spacer.compact {
+      flex: 0 0 auto;
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding: 0;
+    }
+
+    .schedule-spacer.tail {
+      flex: 1 1 auto;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-content: center;
+      min-height: 4.5rem;
+      padding-top: 0.3rem;
+    }
+
+    .schedule-table-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0 1.1rem 1.1rem;
+    }
+
+    .schedule-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .schedule-legend li {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.42rem;
+      min-height: 2rem;
+      padding: 0.34rem 0.58rem;
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.76);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .legend-dot {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background: var(--color-yellow);
+      box-shadow: 0 0 16px rgba(255, 212, 0, 0.36);
+    }
+
+    .schedule-note {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      max-width: 470px;
+      margin: 0;
+      padding: 0.9rem;
+      border-radius: var(--radius-sm);
+      color: rgba(255, 255, 255, 0.74);
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.92rem;
+      font-weight: 750;
+    }
+
+    .schedule-note svg {
+      color: var(--color-yellow);
+      margin-top: 0.15rem;
+    }
+
+    /* =========================================================
+       11. Benefícios e público
+       ========================================================= */
+    .benefits-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.85fr);
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .benefit-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .benefit-card {
+      padding: 1.2rem;
+      border-radius: var(--radius-sm);
+      color: var(--color-black);
+      background: var(--color-yellow);
+      box-shadow: var(--shadow-yellow);
+    }
+
+    .benefit-card:nth-child(2) {
+      color: var(--color-white);
+      background: var(--color-panel);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: var(--shadow-card);
+    }
+
+    .benefit-card strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .benefit-card p {
+      margin: 0.75rem 0 0;
+      font-size: 0.96rem;
+      font-weight: 800;
+    }
+
+    .audience-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 2.25rem;
+    }
+
+    .audience-card {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      gap: 0.75rem;
+      min-height: 9.3rem;
+      padding: 1.45rem;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(255, 212, 0, 0.16), transparent 34%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025) 42%),
+        rgba(12, 12, 12, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        0 22px 56px rgba(0, 0, 0, 0.38),
+        0 0 34px rgba(255, 212, 0, 0.06);
+      transition: transform 220ms var(--ease), border-color 220ms var(--ease), box-shadow 220ms var(--ease);
+    }
+
+    .audience-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(120deg, transparent 0 34%, rgba(255, 255, 255, 0.18) 48%, transparent 62%),
+        radial-gradient(circle at 84% 18%, rgba(255, 255, 255, 0.13), transparent 24%);
+      opacity: 0;
+      transform: translateX(-18%);
+      transition: opacity 220ms var(--ease), transform 420ms var(--ease);
+      pointer-events: none;
+    }
+
+    .audience-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 212, 0, 0.52);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        0 28px 76px rgba(0, 0, 0, 0.48),
+        0 0 48px rgba(255, 212, 0, 0.16);
+    }
+
+    .audience-card:hover::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .audience-card svg {
+      width: 1.45rem;
+      height: 1.45rem;
+      color: var(--color-yellow);
+      filter: drop-shadow(0 0 14px rgba(255, 212, 0, 0.42));
+    }
+
+    .audience-card h3 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .audience-card p {
+      margin: 0;
+      color: var(--color-muted-strong);
+      font-size: 0.92rem;
+    }
+
+    .audience-card:nth-child(odd) {
+      color: var(--color-black);
+      background:
+        radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.58), transparent 36%),
+        linear-gradient(145deg, #ffe86a 0%, var(--color-yellow) 46%, #d8a800 100%);
+      border-color: rgba(255, 212, 0, 0.72);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.62),
+        0 26px 70px rgba(255, 212, 0, 0.20),
+        0 18px 46px rgba(0, 0, 0, 0.34);
+    }
+
+    .audience-card:nth-child(odd) svg,
+    .audience-card:nth-child(odd) h3,
+    .audience-card:nth-child(odd) p {
+      color: var(--color-black);
+    }
+
+    .audience-card:nth-child(odd) svg {
+      filter: drop-shadow(0 10px 18px rgba(5, 5, 5, 0.22));
+    }
+
+    .audience-card:nth-child(odd):hover {
+      border-color: rgba(255, 255, 255, 0.68);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.72),
+        0 32px 82px rgba(255, 212, 0, 0.28),
+        0 20px 50px rgba(0, 0, 0, 0.38);
+    }
+
+    /* =========================================================
+       12. Contato
+       ========================================================= */
+    .contact-section {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        linear-gradient(112deg, rgba(255, 212, 0, 0.12) 0 18%, transparent 18% 100%),
+        linear-gradient(180deg, #050505 0%, #0a0a0a 58%, #050505 100%);
+    }
+
+    .contact-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        repeating-linear-gradient(112deg, transparent 0, transparent 26px, rgba(255, 212, 0, 0.08) 27px, transparent 28px),
+        linear-gradient(108deg, transparent 0 64%, rgba(255, 212, 0, 0.18) 64% 64.35%, transparent 64.35%);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .contact-section::after {
+      content: "CONTATO";
+      position: absolute;
+      right: clamp(1rem, 4vw, 4rem);
+      bottom: -2.2rem;
+      z-index: 0;
+      color: rgba(255, 255, 255, 0.04);
+      font-family: var(--font-display);
+      font-size: clamp(4.8rem, 13vw, 11rem);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .contact-section > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-section .section-copy {
+      max-width: 560px;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(18rem, 0.82fr) minmax(24rem, 1.18fr);
+      gap: clamp(1.2rem, 3vw, 2.6rem);
+      align-items: stretch;
+      margin-top: 2.6rem;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 1rem;
+      grid-template-rows: minmax(0, 1fr) auto;
+    }
+
+    .info-block {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      overflow: hidden;
+      padding: 1.25rem;
+      border-radius: var(--radius-sm);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.035) 46%),
+        rgba(10, 10, 10, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        0 22px 56px rgba(0, 0, 0, 0.34);
+      transition: transform 220ms var(--ease), border-color 220ms var(--ease), box-shadow 220ms var(--ease);
+    }
+
+    .info-block::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        linear-gradient(128deg, transparent 0 42%, rgba(255, 212, 0, 0.16) 42% 42.8%, transparent 42.8%),
+        radial-gradient(circle at 12% 0%, rgba(255, 212, 0, 0.14), transparent 34%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .info-block > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-block:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 212, 0, 0.42);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        0 28px 72px rgba(0, 0, 0, 0.42),
+        0 0 42px rgba(255, 212, 0, 0.10);
+    }
+
+    .info-block-feature {
+      color: var(--color-black);
+      grid-template-columns: 1fr;
+      align-content: end;
+      min-height: 23rem;
+      padding: 1.55rem;
+      border-color: rgba(255, 212, 0, 0.78);
+      background:
+        radial-gradient(circle at 18% 10%, rgba(255, 255, 255, 0.74), transparent 34%),
+        radial-gradient(circle at 82% 8%, rgba(255, 241, 166, 0.52), transparent 28%),
+        linear-gradient(145deg, #fff06d 0%, var(--color-yellow) 48%, #d8a800 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.72),
+        0 32px 84px rgba(255, 212, 0, 0.25),
+        0 22px 58px rgba(0, 0, 0, 0.42);
+    }
+
+    .info-block-feature::before {
+      background:
+        radial-gradient(circle at 22% 16%, rgba(255, 255, 255, 0.66), transparent 26%),
+        radial-gradient(circle at 78% 78%, rgba(255, 255, 255, 0.20), transparent 30%),
+        linear-gradient(128deg, transparent 0 48%, rgba(5, 5, 5, 0.14) 48% 48.7%, transparent 48.7%),
+        repeating-linear-gradient(112deg, transparent 0, transparent 24px, rgba(5, 5, 5, 0.05) 25px, transparent 26px);
+      opacity: 1;
+    }
+
+    .info-block-feature::after {
+      content: "";
+      position: absolute;
+      inset: 1rem;
+      z-index: 0;
+      border: 1px solid rgba(5, 5, 5, 0.18);
+      border-radius: var(--radius-sm);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.36),
+        inset 0 0 36px rgba(255, 255, 255, 0.16);
+      pointer-events: none;
+    }
+
+    .info-block-feature:hover {
+      border-color: rgba(255, 255, 255, 0.70);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.78),
+        0 38px 96px rgba(255, 212, 0, 0.32),
+        0 24px 62px rgba(0, 0, 0, 0.44);
+    }
+
+    .contact-mini-grid {
+      display: flex;
+      align-items: center;
+      gap: 1.05rem;
+      padding-top: 0.25rem;
+    }
+
+    .contact-icon-link {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      place-items: center;
+      width: 3.45rem;
+      height: 3.45rem;
+      border-radius: 50%;
+      color: var(--color-yellow);
+      text-decoration: none;
+      transition: color 220ms var(--ease), transform 220ms var(--ease);
+    }
+
+    .contact-icon-link::before {
+      content: "";
+      position: absolute;
+      inset: 0.45rem;
+      z-index: -1;
+      border-radius: inherit;
+      background: rgba(255, 212, 0, 0.18);
+      filter: blur(11px);
+      opacity: 0.7;
+      transform: scale(0.72);
+      transition: opacity 220ms var(--ease), transform 220ms var(--ease);
+    }
+
+    .contact-icon-link svg {
+      width: 2rem;
+      height: 2rem;
+      filter: drop-shadow(0 11px 20px rgba(255, 212, 0, 0.28));
+    }
+
+    .contact-icon-link:hover,
+    .contact-icon-link:focus-visible {
+      color: #fff1a6;
+      transform: translateY(-4px);
+    }
+
+    .contact-icon-link:hover::before,
+    .contact-icon-link:focus-visible::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .info-block .icon-box {
+      display: grid;
+      place-items: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: var(--radius-xs);
+      color: var(--color-black);
+      background: var(--color-yellow);
+      box-shadow: 0 18px 36px rgba(255, 212, 0, 0.18), var(--shadow-yellow);
+    }
+
+    .info-block-feature .icon-box {
+      width: 3.35rem;
+      height: 3.35rem;
+      margin-bottom: 1.1rem;
+      color: var(--color-yellow);
+      background: var(--color-black);
+      box-shadow:
+        0 18px 38px rgba(5, 5, 5, 0.28),
+        0 0 32px rgba(255, 255, 255, 0.24);
+    }
+
+    .info-block-feature .contact-kicker {
+      color: var(--color-black);
+      background: rgba(5, 5, 5, 0.10);
+      border-color: rgba(5, 5, 5, 0.20);
+    }
+
+    .contact-kicker,
+    .form-kicker {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 1.75rem;
+      padding: 0.28rem 0.58rem;
+      border-radius: 999px;
+      color: var(--color-yellow);
+      background: rgba(255, 212, 0, 0.10);
+      border: 1px solid rgba(255, 212, 0, 0.22);
+      font-size: 0.68rem;
+      font-weight: 950;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .info-block h3 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .info-block-feature h3 {
+      margin-top: 0.85rem;
+      color: var(--color-black);
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      line-height: 0.95;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.24);
+    }
+
+    .info-block p,
+    .info-block address {
+      margin: 0.45rem 0 0;
+      color: var(--color-muted-strong);
+      font-style: normal;
+    }
+
+    .info-block-feature address {
+      max-width: 18rem;
+      margin-top: 0.85rem;
+      color: rgba(5, 5, 5, 0.78);
+      font-size: 1.02rem;
+      font-weight: 650;
+    }
+
+    .info-block-feature .button.secondary {
+      color: var(--color-yellow);
+      background: rgba(5, 5, 5, 0.94);
+      border-color: rgba(5, 5, 5, 0.72);
+      box-shadow: 0 16px 36px rgba(5, 5, 5, 0.28);
+      backdrop-filter: none;
+    }
+
+    .info-block-feature .button.secondary:hover,
+    .info-block-feature .button.secondary:focus-visible {
+      color: var(--color-white);
+      border-color: rgba(5, 5, 5, 0.92);
+      box-shadow: 0 20px 48px rgba(5, 5, 5, 0.34);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.9rem;
+    }
+
+    .contact-form {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(1.15rem, 2.6vw, 1.75rem);
+      border-radius: var(--radius-sm);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035) 44%),
+        rgba(9, 9, 9, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 30px 90px rgba(0, 0, 0, 0.46),
+        0 0 52px rgba(255, 212, 0, 0.08);
+    }
+
+    .contact-form::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(112deg, rgba(255, 212, 0, 0.16) 0 16%, transparent 16% 100%),
+        linear-gradient(135deg, rgba(255, 212, 0, 0.08), transparent 45%),
+        repeating-linear-gradient(112deg, transparent 0, transparent 22px, rgba(255, 255, 255, 0.045) 23px, transparent 24px);
+      pointer-events: none;
+    }
+
+    .form-heading {
+      position: relative;
+      display: grid;
+      gap: 0.5rem;
+      margin-bottom: 1.15rem;
+      padding-bottom: 1.05rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .form-heading h3 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      line-height: 0.98;
+      text-transform: uppercase;
+    }
+
+    .form-heading p {
+      max-width: 34rem;
+      margin: 0;
+      color: var(--color-muted-strong);
+      font-size: 0.96rem;
+    }
+
+    .form-grid {
+      position: relative;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.42rem;
+    }
+
+    .field label {
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 3.15rem;
+      padding: 0.9rem 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-xs);
+      color: var(--color-white);
+      background: rgba(5, 5, 5, 0.66);
+      outline: 0;
+      transition: border-color 180ms var(--ease), box-shadow 180ms var(--ease), background 180ms var(--ease);
+    }
+
+    .field select {
+      appearance: none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, var(--color-yellow) 50%),
+        linear-gradient(135deg, var(--color-yellow) 50%, transparent 50%);
+      background-position:
+        calc(100% - 1.15rem) 50%,
+        calc(100% - 0.82rem) 50%;
+      background-size: 0.35rem 0.35rem, 0.35rem 0.35rem;
+      background-repeat: no-repeat;
+    }
+
+    .field textarea {
+      min-height: 8rem;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: rgba(255, 212, 0, 0.72);
+      background: rgba(5, 5, 5, 0.92);
+      box-shadow: 0 0 0 4px rgba(255, 212, 0, 0.12);
+    }
+
+    .field ::placeholder {
+      color: rgba(255, 255, 255, 0.42);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+
+    .form-status {
+      min-height: 1.45rem;
+      margin: 0;
+      color: var(--color-yellow);
+      font-size: 0.88rem;
+      font-weight: 850;
+    }
+
+    .contact-form .button {
+      width: 100%;
+      min-height: 3.45rem;
+    }
+
+    html[data-theme="light"] .contact-section {
+      color: var(--color-white);
+      background:
+        linear-gradient(112deg, rgba(255, 212, 0, 0.13) 0 18%, transparent 18% 100%),
+        linear-gradient(180deg, #060606 0%, #0b0b0b 58%, #050505 100%);
+    }
+
+    html[data-theme="light"] .contact-section .section-title,
+    html[data-theme="light"] .contact-section .section-copy,
+    html[data-theme="light"] .contact-section .eyebrow,
+    html[data-theme="light"] .contact-section .info-block h3,
+    html[data-theme="light"] .contact-section .info-block p,
+    html[data-theme="light"] .contact-section .info-block address,
+    html[data-theme="light"] .contact-section .form-heading h3,
+    html[data-theme="light"] .contact-section .form-heading p {
+      color: inherit;
+    }
+
+    html[data-theme="light"] .contact-section .section-copy,
+    html[data-theme="light"] .contact-section .info-block p,
+    html[data-theme="light"] .contact-section .info-block address,
+    html[data-theme="light"] .contact-section .form-heading p {
+      color: var(--color-muted-strong);
+    }
+
+    html[data-theme="light"] .contact-section .info-block,
+    html[data-theme="light"] .contact-section .contact-form {
+      color: var(--color-white);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.035) 46%),
+        rgba(10, 10, 10, 0.92);
+      border-color: rgba(255, 255, 255, 0.14);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        0 22px 56px rgba(0, 0, 0, 0.34);
+    }
+
+    html[data-theme="light"] .contact-section .info-block-feature {
+      color: var(--color-black);
+      background:
+        radial-gradient(circle at 18% 10%, rgba(255, 255, 255, 0.74), transparent 34%),
+        radial-gradient(circle at 82% 8%, rgba(255, 241, 166, 0.52), transparent 28%),
+        linear-gradient(145deg, #fff06d 0%, var(--color-yellow) 48%, #d8a800 100%);
+      border-color: rgba(255, 212, 0, 0.78);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.72),
+        0 32px 84px rgba(255, 212, 0, 0.25),
+        0 22px 58px rgba(0, 0, 0, 0.42);
+    }
+
+    html[data-theme="light"] .contact-section .info-block-feature h3 {
+      color: var(--color-black);
+    }
+
+    html[data-theme="light"] .contact-section .info-block-feature address {
+      color: rgba(5, 5, 5, 0.78);
+    }
+
+    html[data-theme="light"] .contact-section .field label {
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    /* =========================================================
+       13. CTA final e footer
+       ========================================================= */
+    .final-cta {
+      position: relative;
+      padding: 5.5rem 0;
+      color: var(--color-black);
+      background: var(--color-yellow);
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: "EVOLUÇÃO";
+      position: absolute;
+      left: -1rem;
+      top: 50%;
+      color: rgba(5, 5, 5, 0.07);
+      font-family: var(--font-display);
+      font-size: 7.5rem;
+      line-height: 1;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .final-layout {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .final-cta h2 {
+      max-width: 860px;
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 3.45rem;
+      line-height: 0.96;
+      text-transform: uppercase;
+    }
+
+    .final-cta p {
+      max-width: 670px;
+      margin: 1rem 0 0;
+      color: rgba(5, 5, 5, 0.72);
+      font-size: 1.05rem;
+      font-weight: 850;
+    }
+
+    .site-footer {
+      padding: 2rem 0;
+      background: #030303;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .footer-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.76);
+      font-weight: 800;
+      transition: color 180ms var(--ease);
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: var(--color-yellow);
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 80;
+      display: grid;
+      place-items: center;
+      width: 3.65rem;
+      height: 3.65rem;
+      border-radius: 50%;
+      color: var(--color-black);
+      background: var(--color-yellow);
+      box-shadow: 0 0 0 8px rgba(255, 212, 0, 0.12), var(--shadow-yellow);
+      transition: transform 180ms var(--ease), box-shadow 180ms var(--ease);
+    }
+
+    .floating-whatsapp:hover,
+    .floating-whatsapp:focus-visible {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 0 10px rgba(255, 212, 0, 0.16), 0 0 54px rgba(255, 212, 0, 0.36);
+    }
+
+    .floating-whatsapp svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    /* =========================================================
+       14. Responsivo
+       ========================================================= */
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .about-layout,
+      .kids-layout,
+      .coach-layout,
+      .benefits-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info {
+        grid-template-rows: auto;
+      }
+
+      .info-block-feature {
+        min-height: 18rem;
+      }
+
+      .hero-controls {
+        display: flex;
+        justify-self: start;
+        align-self: start;
+        width: auto;
+        margin-top: 0.15rem;
+      }
+
+      .section-head,
+      .gallery-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .modality-grid,
+      .reason-grid,
+      .audience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .schedule-heading {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .schedule-heading .button {
+        width: fit-content;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .site-header {
+        background: transparent;
+      }
+
+      html[data-theme="light"] .site-header {
+        background: transparent;
+      }
+
+      .menu-toggle {
+        display: grid;
+      }
+
+      .nav-menu {
+        position: fixed;
+        left: 1rem;
+        right: 1rem;
+        top: 5.65rem;
+        display: grid;
+        gap: 1rem;
+        padding: 1rem;
+        overflow: hidden;
+        border: 1px solid rgba(255, 212, 0, 0.32);
+        border-radius: var(--radius-sm);
+        background:
+          linear-gradient(145deg, rgba(255, 212, 0, 0.14), rgba(255, 255, 255, 0.04) 38%, rgba(5, 5, 5, 0.96)),
+          repeating-linear-gradient(108deg, transparent 0, transparent 18px, rgba(255, 212, 0, 0.055) 19px, transparent 20px),
+          rgba(5, 5, 5, 0.96);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.14),
+          0 28px 80px rgba(0, 0, 0, 0.58),
+          0 0 54px rgba(255, 212, 0, 0.14);
+        backdrop-filter: blur(20px);
+        transform: translateY(-0.85rem) scale(0.98);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 220ms var(--ease), transform 260ms var(--ease);
+      }
+
+      .nav-menu::before,
+      .nav-menu::after {
+        content: "";
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, transparent, var(--color-yellow), #fff4a8, transparent);
+        box-shadow: 0 0 22px rgba(255, 212, 0, 0.46);
+        pointer-events: none;
+      }
+
+      .nav-menu::before {
+        top: 0.85rem;
+      }
+
+      .nav-menu::after {
+        bottom: 0.85rem;
+        opacity: 0.72;
+      }
+
+      html[data-theme="light"] .nav-menu {
+        background:
+          linear-gradient(145deg, rgba(255, 212, 0, 0.20), rgba(255, 255, 255, 0.70) 40%, rgba(247, 243, 232, 0.96)),
+          repeating-linear-gradient(108deg, transparent 0, transparent 18px, rgba(201, 154, 0, 0.07) 19px, transparent 20px),
+          rgba(255, 255, 255, 0.96);
+        border-color: rgba(201, 154, 0, 0.28);
+      }
+
+      .nav-menu.is-open {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-links {
+        display: grid;
+        align-items: stretch;
+        gap: 0.42rem;
+        padding: 0.35rem 0 0.25rem;
+      }
+
+      .nav-links a {
+        width: 100%;
+        justify-content: center;
+        min-height: 3.05rem;
+        padding: 0.82rem 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.08),
+          0 12px 28px rgba(0, 0, 0, 0.18);
+        letter-spacing: 0;
+      }
+
+      .nav-links a::after {
+        left: 1rem;
+        right: 1rem;
+        bottom: 0.5rem;
+        opacity: 0.82;
+        transform: scaleX(0.24);
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after {
+        transform: scaleX(1);
+      }
+
+      .nav-menu.is-open .nav-links li,
+      .nav-menu.is-open .mobile-menu-cta {
+        animation: menuItemIn 360ms var(--ease) both;
+      }
+
+      .nav-menu.is-open .nav-links li:nth-child(2) {
+        animation-delay: 35ms;
+      }
+
+      .nav-menu.is-open .nav-links li:nth-child(3) {
+        animation-delay: 70ms;
+      }
+
+      .nav-menu.is-open .nav-links li:nth-child(4) {
+        animation-delay: 105ms;
+      }
+
+      .nav-menu.is-open .nav-links li:nth-child(5) {
+        animation-delay: 140ms;
+      }
+
+      .nav-menu.is-open .nav-links li:nth-child(6) {
+        animation-delay: 175ms;
+      }
+
+      .nav-menu.is-open .mobile-menu-cta {
+        animation-delay: 210ms;
+      }
+
+      .mobile-menu-cta {
+        display: inline-flex;
+        width: 100%;
+        min-height: 3.35rem;
+      }
+
+      .nav-actions .button {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 7.3rem;
+      }
+
+      .hero-grid {
+        gap: 2rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2.35rem, 7vw, 3.75rem);
+      }
+
+      .section-title,
+      .final-cta h2 {
+        font-size: 2.55rem;
+      }
+
+      .coach-title {
+        font-size: 3rem;
+      }
+
+      .highlight-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .highlight-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .highlight-item:nth-child(-n + 2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+      }
+
+      .final-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(100% - 1.1rem, var(--container));
+      }
+
+      .section {
+        padding: 4.4rem 0;
+      }
+
+      .class-gallery {
+        padding: 4.3rem 0;
+      }
+
+      .gallery-head {
+        align-items: start;
+        flex-direction: column;
+        gap: 0.85rem;
+        margin-bottom: 1.45rem;
+      }
+
+      .gallery-head .section-copy {
+        max-width: none;
+      }
+
+      .gallery-rails {
+        gap: 0.72rem;
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+      }
+
+      .gallery-row {
+        --gallery-gap: 0.62rem;
+      }
+
+      .gallery-photo {
+        width: clamp(11.5rem, 62vw, 17rem);
+        border-radius: var(--radius-xs);
+      }
+
+      .gallery-marquee {
+        animation-duration: 48s;
+      }
+
+      .gallery-row.reverse .gallery-marquee {
+        animation-duration: 56s;
+      }
+
+      .hero {
+        padding-bottom: 4.2rem;
+      }
+
+      .hero-bg {
+        background-position-x: 88%;
+      }
+
+      .hero::after,
+      .final-cta::before {
+        display: none;
+      }
+
+      .hero-logo {
+        width: 5.9rem;
+      }
+
+      .hero-title {
+        font-size: 2.75rem;
+      }
+
+      .hero-lead {
+        font-size: 1rem;
+      }
+
+      .hero-arrow {
+        width: 3.35rem;
+        height: 3.35rem;
+      }
+
+      .video-audio-control {
+        left: 0.7rem;
+        right: auto;
+        bottom: 0.7rem;
+        width: 2.85rem;
+        min-height: 11.45rem;
+      }
+
+      .video-volume {
+        flex-basis: 5rem;
+        height: 5rem;
+      }
+
+      .section-title,
+      .final-cta h2 {
+        font-size: 2.15rem;
+      }
+
+      .coach-title {
+        font-size: 2.35rem;
+      }
+
+      .highlight-grid,
+      .modality-grid,
+      .reason-grid,
+      .audience-grid,
+      .benefit-cards,
+      .kids-cards,
+      .stat-stack {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-item {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+      }
+
+      .highlight-item:last-child {
+        border-bottom: 0;
+      }
+
+      .schedule-panel-top,
+      .schedule-table-footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .schedule-mobile-filter {
+        position: relative;
+        display: grid;
+        gap: 0.62rem;
+        margin: 0.85rem 0.6rem 0;
+        padding: 0.9rem;
+        overflow: hidden;
+        border: 1px solid rgba(255, 212, 0, 0.28);
+        border-radius: var(--radius-sm);
+        color: var(--color-white);
+        background:
+          linear-gradient(120deg, rgba(255, 212, 0, 0.22), transparent 38%),
+          linear-gradient(145deg, rgba(255, 212, 0, 0.13), rgba(255, 255, 255, 0.05) 48%, rgba(5, 5, 5, 0.82)),
+          rgba(8, 8, 8, 0.94);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.12),
+          0 22px 54px rgba(0, 0, 0, 0.34),
+          0 0 42px rgba(255, 212, 0, 0.10);
+      }
+
+      .schedule-mobile-filter::after {
+        content: "";
+        position: absolute;
+        left: 0.9rem;
+        right: 0.9rem;
+        bottom: 0.75rem;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, transparent, var(--color-yellow), #fff4a8, transparent);
+        box-shadow: 0 0 18px rgba(255, 212, 0, 0.48);
+        pointer-events: none;
+      }
+
+      .schedule-mobile-filter label {
+        color: var(--color-yellow);
+        font-size: 0.76rem;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .schedule-select-wrap {
+        position: relative;
+      }
+
+      .schedule-day-select {
+        width: 100%;
+        min-height: 3.25rem;
+        padding: 0.82rem 3rem 0.82rem 0.95rem;
+        border: 1px solid rgba(255, 212, 0, 0.36);
+        border-radius: var(--radius-xs);
+        color: var(--color-black);
+        background:
+          linear-gradient(135deg, #fff4a8, var(--color-yellow) 54%, #c99a00);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.56),
+          0 16px 34px rgba(255, 212, 0, 0.18);
+        font-family: var(--font-display);
+        font-size: 1rem;
+        line-height: 1;
+        text-transform: uppercase;
+        appearance: none;
+        cursor: pointer;
+        transition: transform 180ms var(--ease), box-shadow 180ms var(--ease), border-color 180ms var(--ease);
+      }
+
+      .schedule-day-select:hover,
+      .schedule-day-select:focus-visible {
+        border-color: rgba(255, 244, 168, 0.9);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.66),
+          0 18px 40px rgba(255, 212, 0, 0.25),
+          0 0 0 4px rgba(255, 212, 0, 0.14);
+        outline: 0;
+        transform: translateY(-1px);
+      }
+
+      .schedule-select-wrap::after {
+        content: "";
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        width: 0.62rem;
+        height: 0.62rem;
+        border-right: 3px solid #050505;
+        border-bottom: 3px solid #050505;
+        transform: translateY(-64%) rotate(45deg);
+        pointer-events: none;
+      }
+
+      .schedule-day-summary {
+        margin: 0 0 0.3rem;
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 0.82rem;
+        font-weight: 850;
+      }
+
+      .schedule-table-scroll {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 0.6rem;
+      }
+
+      .schedule-table {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        border-spacing: 0;
+        table-layout: auto;
+      }
+
+      .schedule-table thead,
+      .schedule-table tbody,
+      .schedule-table tr {
+        display: block;
+        width: 100%;
+      }
+
+      .schedule-table th {
+        display: block;
+        width: 100%;
+        height: 3.1rem;
+        margin-bottom: 0.55rem;
+        font-size: 1.08rem;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.52),
+          0 16px 34px rgba(255, 212, 0, 0.28);
+      }
+
+      .schedule-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .schedule-table th[data-schedule-hidden="true"],
+      .schedule-table td[data-schedule-hidden="true"] {
+        display: none;
+      }
+
+      .schedule-day-track {
+        gap: 0.7rem;
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
+        padding: 0.82rem;
+        border-radius: var(--radius-sm);
+        background:
+          linear-gradient(135deg, rgba(255, 212, 0, 0.16), transparent 42%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 240, 226, 0.98));
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.78),
+          0 20px 48px rgba(5, 5, 5, 0.20),
+          0 0 42px rgba(255, 212, 0, 0.08);
+      }
+
+      .schedule-day-track > * {
+        min-width: 0;
+      }
+
+      .schedule-class {
+        position: relative;
+        width: 100%;
+        grid-template-columns: minmax(3.5rem, 4.15rem) minmax(0, 1fr);
+        align-items: center;
+        align-content: center;
+        justify-items: start;
+        column-gap: 0.78rem;
+        min-height: 3.8rem;
+        padding: 0.72rem 0.82rem;
+        overflow: hidden;
+        text-align: left;
+      }
+
+      .schedule-class::after {
+        content: "";
+        position: absolute;
+        inset: auto 0.8rem 0.55rem;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, transparent, var(--color-yellow), transparent);
+        box-shadow: 0 0 18px rgba(255, 212, 0, 0.44);
+        opacity: 0.72;
+      }
+
+      .schedule-class .class-time {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.55rem;
+        min-height: 2.1rem;
+        border-radius: var(--radius-xs);
+        color: var(--color-black);
+        background: linear-gradient(135deg, #fff4a8, var(--color-yellow));
+        box-shadow: 0 10px 24px rgba(255, 212, 0, 0.22);
+      }
+
+      .schedule-class .class-name {
+        margin-top: 0;
+        font-size: 0.82rem;
+      }
+
+      .schedule-spacer {
+        flex: 0 0 auto;
+        width: 100%;
+        min-height: auto;
+        padding: 0.62rem;
+        border-radius: var(--radius-sm);
+        background:
+          linear-gradient(135deg, rgba(255, 212, 0, 0.12), rgba(5, 5, 5, 0.045));
+        border: 1px dashed rgba(5, 5, 5, 0.22);
+      }
+
+      .schedule-spacer span {
+        min-height: 2.2rem;
+        font-size: 0.7rem;
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      .schedule-separator {
+        width: 84%;
+        margin: 0.25rem auto;
+        background: linear-gradient(90deg, transparent, rgba(5, 5, 5, 0.62), transparent);
+      }
+
+      .schedule-table.is-switching .schedule-day-track {
+        animation: scheduleDayIn 300ms var(--ease) both;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .info-block,
+      .info-block-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-layout {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .brand-logo {
+        width: 3.35rem;
+        height: 3.35rem;
+      }
+
+      .hero-title {
+        font-size: 2.25rem;
+      }
+
+      .section-title,
+      .final-cta h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero-cta,
+      .contact-actions,
+      .schedule-heading .button {
+        display: grid;
+      }
+
+      .schedule-table {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .schedule-panel-top,
+      .schedule-table-footer {
+        padding-inline: 0.75rem;
+      }
+
+      .class-gallery {
+        padding: 3.6rem 0;
+      }
+
+      .gallery-photo {
+        width: 11.4rem;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+      .gallery-marquee {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute">
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24">
+      <path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+      <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
+    </symbol>
+    <symbol id="icon-pause" viewBox="0 0 24 24">
+      <path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+    </symbol>
+    <symbol id="icon-volume" viewBox="0 0 24 24">
+      <path d="M4 9v6h4l5 4V5L8 9H4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+      <path d="M16 8.5a4 4 0 0 1 0 7M18.5 6a7 7 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </symbol>
+    <symbol id="icon-volume-off" viewBox="0 0 24 24">
+      <path d="M4 9v6h4l5 4V5L8 9H4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+      <path d="m18 9 4 4M22 9l-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </symbol>
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Zm-5.42 7.4h-.01a9.88 9.88 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.9 6.99c0 5.45-4.44 9.88-9.89 9.88Zm8.41-18.29A11.82 11.82 0 0 0 12.05 0C5.49 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9a11.82 11.82 0 0 0-3.48-8.41Z" />
+    </symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24">
+      <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" fill="none" stroke="currentColor" stroke-width="2" />
+      <circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2" />
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2" />
+      <path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-trophy" viewBox="0 0 24 24">
+      <path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M17 5h3v2a4 4 0 0 1-4 4M7 5H4v2a4 4 0 0 0 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2" />
+      <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2" />
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      <circle cx="9" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </symbol>
+    <symbol id="icon-flame" viewBox="0 0 24 24">
+      <path d="M8.5 14.5A3.5 3.5 0 0 0 12 22a7 7 0 0 0 7-7c0-5-4-8-4-12-4 2-7 6-7 10 0 .52.08 1.03.24 1.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12 22a3 3 0 0 0 3-3c0-2-1.5-3.2-3-5-1.5 1.8-3 3-3 5a3 3 0 0 0 3 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24">
+      <path d="M13 2 9.8 9.8 2 13l7.8 3.2L13 24l3.2-7.8L24 13l-7.8-3.2L13 2Z" fill="currentColor" />
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2" />
+      <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+      <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <path d="M4 4h16v16H4V4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+      <path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+  </svg>
+
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Bravus Combat">
+        <img
+          class="brand-logo"
+          data-brand-logo
+          data-dark-logo="/images/logo-logo-bravus.webp"
+          data-light-logo="/images/logo/logo-preta.webp"
+          data-dark-fallback="/images/logo/logo-bravus.webp"
+          src="/images/logo-logo-bravus.webp"
+          data-fallback="/images/logo/logo-bravus.webp"
+          onerror="this.onerror=null; this.src='/images/logo/logo-bravus.webp';"
+          alt="Bravus Combat"
+          width="78"
+          height="78"
+        />
+      </a>
+
+      <div class="nav-menu" id="navMenu" data-menu>
+        <ul class="nav-links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#modalidades">Modalidades</a></li>
+          <li><a href="#kids">Kids</a></li>
+          <li><a href="#horarios">Horários</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a class="button mobile-menu-cta js-whatsapp" href="#" data-message="OlÃ¡, Bravus Combat! Quero agendar uma aula experimental.">
+          <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+          Agendar aula
+        </a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Alternar para tema claro" data-theme-toggle>
+          <svg class="icon-sun" aria-hidden="true"><use href="#icon-sun"></use></svg>
+          <svg class="icon-moon" aria-hidden="true"><use href="#icon-moon"></use></svg>
+        </button>
+        <a class="button js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero agendar uma aula experimental.">
+          <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+          Agendar aula
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="navMenu" aria-expanded="false" data-menu-toggle>
+          <svg class="icon-menu" aria-hidden="true"><use href="#icon-menu"></use></svg>
+          <svg class="icon-close" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title" data-hero-carousel>
+      <div class="hero-bg hero-bg-current" data-hero-bg-current></div>
+      <div class="hero-bg hero-bg-next" data-hero-bg-next></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <img
+            class="hero-logo"
+            src="/images/logo-logo-bravus.webp"
+            data-fallback="/images/logo/logo-bravus.webp"
+            onerror="this.onerror=null; this.src='/images/logo/logo-bravus.webp';"
+            alt="Bravus Combat"
+            width="142"
+            height="142"
+          />
+          <div class="hero-badge">
+            <svg aria-hidden="true"><use href="#icon-spark"></use></svg>
+            <span data-hero-kicker>Modalidade em destaque</span>
+          </div>
+          <h1 class="hero-title" id="hero-title">
+            <span data-hero-title-main>Muay Thai</span>
+            <span data-hero-title-accent>Técnica e potência</span>
+          </h1>
+          <p class="hero-lead" data-hero-lead>
+            Uma arte marcial completa para desenvolver resistência, coordenação, agilidade e confiança.
+          </p>
+
+          <ul class="hero-meta" aria-label="Modalidades da Bravus Combat">
+            <li><svg aria-hidden="true"><use href="#icon-map"></use></svg>Vila Queiroz - Limeira/SP</li>
+            <li><svg aria-hidden="true"><use href="#icon-trophy"></use></svg>Wesley Nonato</li>
+            <li><svg aria-hidden="true"><use href="#icon-users"></use></svg>Adulto e Kids</li>
+          </ul>
+
+          <div class="hero-cta">
+            <a class="button js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero agendar minha aula experimental.">
+              <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              Agende sua aula experimental
+            </a>
+            <a class="button secondary" href="#modalidades">
+              <svg aria-hidden="true"><use href="#icon-arrow"></use></svg>
+              Explorar modalidades
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-controls reveal delay-2" aria-label="Controles do carrossel de modalidades">
+          <button class="hero-arrow hero-arrow-prev" type="button" data-hero-prev aria-label="Slide anterior">
+            <svg aria-hidden="true"><use href="#icon-arrow"></use></svg>
+          </button>
+
+          <button class="hero-arrow hero-arrow-next" type="button" data-hero-next aria-label="Próximo slide">
+            <svg aria-hidden="true"><use href="#icon-arrow"></use></svg>
+          </button>
+        </aside>
+      </div>
+      <a class="scroll-cue" href="#destaques" aria-label="Ir para os destaques"></a>
+    </section>
+
+    <section class="highlight-strip" id="destaques" aria-label="Destaques Bravus">
+      <div class="container">
+        <div class="highlight-grid reveal">
+          <article class="highlight-item">
+            <svg aria-hidden="true"><use href="#icon-target"></use></svg>
+            <strong>3 modalidades</strong>
+            <span>Muay Thai, Boxe e Jiu-Jitsu no mesmo CT.</span>
+          </article>
+          <article class="highlight-item">
+            <svg aria-hidden="true"><use href="#icon-trophy"></use></svg>
+            <strong>Experiência real</strong>
+            <span>Metodologia de quem viveu a luta na prática.</span>
+          </article>
+          <article class="highlight-item">
+            <svg aria-hidden="true"><use href="#icon-flame"></use></svg>
+            <strong>Evolução diária</strong>
+            <span>Treinos para iniciantes e praticantes experientes.</span>
+          </article>
+          <article class="highlight-item">
+            <svg aria-hidden="true"><use href="#icon-users"></use></svg>
+            <strong>Adulto e Kids</strong>
+            <span>Treinamento para diferentes idades e objetivos.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre" aria-labelledby="sobre-title">
+      <div class="container about-layout">
+        <div class="reveal">
+          <p class="eyebrow">Disciplina. Técnica. Evolução.</p>
+          <h2 class="section-title" id="sobre-title">Não é só sobre lutar. É sobre quem você se torna.</h2>
+          <div class="about-copy">
+            <p>
+              Por trás da Bravus Combat existe uma história construída com disciplina, dedicação e milhares de horas de treino.
+              À frente dessa história está Wesley Nonato, treinador de Muay Thai, atleta e Campeão Mundial.
+            </p>
+            <p>
+              Na Bravus, cada treino vai além da técnica. É sobre aprender a continuar quando o corpo pede para parar,
+              construir confiança, controlar emoções, respeitar limites e superá-los.
+            </p>
+            <p>
+              A Bravus Combat nasceu para formar pessoas mais fortes, disciplinadas e preparadas para enfrentar desafios
+              dentro e fora do tatame.
+            </p>
+          </div>
+
+          <div class="stat-stack" aria-label="Números da Bravus">
+            <div class="stat-card">
+              <span class="stat-number" data-count="3">0</span>
+              <span class="stat-label">Modalidades de luta</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-count="15">0</span>
+              <span class="stat-label">Check-ins TotalPass por mês</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-count="8">0</span>
+              <span class="stat-label">Check-ins Wellhub por mês</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-media reveal delay-2">
+          <figure class="about-video-frame" aria-label="Vídeo da estrutura e dos treinos na Bravus Combat">
+            <video data-about-video src="/videos/video-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+            <div class="video-audio-control" aria-label="Controle de volume do vídeo">
+              <button class="video-audio-toggle" type="button" data-video-audio-toggle aria-label="Ativar som do vídeo" aria-pressed="false">
+                <svg class="icon-volume-on" aria-hidden="true"><use href="#icon-volume"></use></svg>
+                <svg class="icon-volume-off" aria-hidden="true"><use href="#icon-volume-off"></use></svg>
+              </button>
+              <input class="video-volume" type="range" min="0" max="1" step="0.01" value="0.65" orient="vertical" data-video-volume aria-label="Volume do vídeo" />
+              <button class="video-control-button video-play-toggle" type="button" data-video-play-toggle aria-label="Pausar vídeo">
+                <svg class="icon-play" aria-hidden="true"><use href="#icon-play"></use></svg>
+                <svg class="icon-pause" aria-hidden="true"><use href="#icon-pause"></use></svg>
+              </button>
+            </div>
+            <span class="video-shine" aria-hidden="true"></span>
+          </figure>
+          <div class="quote-card">
+            <strong>Seu adversário de hoje é quem você era ontem.</strong>
+            <p>Cada treino é uma nova oportunidade de se tornar um pouco mais forte.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="class-gallery" id="galeria" aria-labelledby="galeria-title">
+      <div class="container gallery-head reveal">
+        <div>
+          <p class="eyebrow">Dentro da Bravus</p>
+          <h2 class="section-title" id="galeria-title">A energia das aulas.</h2>
+        </div>
+        <p class="section-copy">
+          Treinos intensos, correções de perto e um ambiente preparado para evoluir todos os dias.
+        </p>
+      </div>
+
+      <div class="gallery-rails" aria-label="Fotos das aulas da Bravus Combat">
+        <div class="gallery-row" aria-label="Galeria de treinos em movimento">
+          <div class="gallery-marquee">
+            <div class="gallery-marquee-group">
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00732.jpg" alt="Aula na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00733.jpg" alt="Treino na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00734.jpg" alt="Aluno treinando na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00736.jpg" alt="Aula de luta na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00742.jpg" alt="Treino técnico na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00745.jpg" alt="Prática de artes marciais na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00747.jpg" alt="Aula com orientação na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00748.jpg" alt="Treino de combate na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00750.jpg" alt="Movimentação em aula na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00756.jpg" alt="Aula de artes marciais na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00764.jpg" alt="Treino com foco técnico na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00766.jpg" alt="Alunos durante aula na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00768.jpg" alt="Rotina de treino na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00772.jpg" alt="Treino intenso na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00775.jpg" alt="Aula acompanhada na Bravus Combat" loading="lazy" decoding="async" /></figure>
+            </div>
+            <div class="gallery-marquee-group" aria-hidden="true">
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00732.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00733.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00734.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00736.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00742.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00745.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00747.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00748.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00750.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00756.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00764.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00766.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00768.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00772.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00775.jpg" alt="" loading="lazy" decoding="async" /></figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-row reverse" aria-label="Galeria de aulas em movimento reverso">
+          <div class="gallery-marquee">
+            <div class="gallery-marquee-group">
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00777.jpg" alt="Aula na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00779.jpg" alt="Treino na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00780.jpg" alt="Aluno treinando na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00785.jpg" alt="Aula de luta na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00792.jpg" alt="Treino técnico na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00794.jpg" alt="Prática de artes marciais na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00798.jpg" alt="Aula com orientação na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00801.jpg" alt="Treino de combate na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00806.jpg" alt="Movimentação em aula na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00809.jpg" alt="Aula de artes marciais na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00810.jpg" alt="Treino com foco técnico na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00817.jpg" alt="Alunos durante aula na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00822.jpg" alt="Rotina de treino na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00827.jpg" alt="Treino intenso na Bravus Combat" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00829.jpg" alt="Aula acompanhada na Bravus Combat" loading="lazy" decoding="async" /></figure>
+            </div>
+            <div class="gallery-marquee-group" aria-hidden="true">
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00777.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00779.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00780.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00785.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00792.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00794.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00798.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00801.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00806.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00809.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00810.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00817.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00822.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00827.jpg" alt="" loading="lazy" decoding="async" /></figure>
+              <figure class="gallery-photo"><img src="/images/galeria/DSC00829.jpg" alt="" loading="lazy" decoding="async" /></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section modalities" id="modalidades" aria-labelledby="modalidades-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Escolha sua luta</p>
+            <h2 class="section-title" id="modalidades-title">Comece sua evolução.</h2>
+          </div>
+          <p class="section-copy">
+            Não importa se você nunca colocou uma luva ou se já possui experiência. Na Bravus, existe espaço para quem
+            está começando e para quem quer elevar seu nível.
+          </p>
+        </div>
+
+        <div class="grid modality-grid">
+          <article class="modality-card reveal tilt-card">
+            <figure class="image-frame modality-image">
+              <img
+                src="/images/icone-muay-thai.webp"
+                alt="Ícone de Muay Thai"
+                onerror="this.hidden=true; this.closest('.image-frame').classList.add('image-missing')"
+              />
+            </figure>
+            <div class="modality-content">
+              <span class="modality-icon"><svg aria-hidden="true"><use href="#icon-flame"></use></svg></span>
+              <h3>Muay Thai <span>Técnica, potência e condicionamento</span></h3>
+              <p>
+                Uma arte marcial completa que trabalha punhos, cotovelos, joelhos e pernas enquanto desenvolve resistência,
+                coordenação, agilidade e confiança.
+              </p>
+              <p>Ideal para condicionamento físico, defesa pessoal, alívio do estresse e evolução técnica.</p>
+              <a class="text-link" href="#horarios">Ver horários <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+            </div>
+          </article>
+
+          <article class="modality-card reveal delay-1 tilt-card">
+            <figure class="image-frame modality-image">
+              <img
+                src="/images/icone-boxe.webp"
+                alt="Ícone de Boxe"
+                onerror="this.hidden=true; this.closest('.image-frame').classList.add('image-missing')"
+              />
+            </figure>
+            <div class="modality-content">
+              <span class="modality-icon"><svg aria-hidden="true"><use href="#icon-target"></use></svg></span>
+              <h3>Boxe <span>Velocidade, precisão e estratégia</span></h3>
+              <p>
+                Desenvolva golpes, movimentação, esquivas, reflexos e condicionamento em uma das modalidades de combate
+                mais tradicionais do mundo.
+              </p>
+              <p>Um treino intenso para corpo e mente, seja para condicionamento ou evolução na luta.</p>
+              <a class="text-link js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero treinar Boxe.">Quero treinar Boxe <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+            </div>
+          </article>
+
+          <article class="modality-card reveal delay-2 tilt-card">
+            <figure class="image-frame modality-image">
+              <img
+                src="/images/icone-jiu-jitsu.webp"
+                alt="Ícone de Jiu-Jitsu"
+                onerror="this.hidden=true; this.closest('.image-frame').classList.add('image-missing')"
+              />
+            </figure>
+            <div class="modality-content">
+              <span class="modality-icon"><svg aria-hidden="true"><use href="#icon-shield"></use></svg></span>
+              <h3>Jiu-Jitsu <span>Técnica antes da força</span></h3>
+              <p>
+                Aprenda controle, estratégia, defesa e finalizações enquanto desenvolve disciplina, raciocínio e
+                condicionamento físico.
+              </p>
+              <p>Uma modalidade que ensina calma sob pressão e evolução treino após treino.</p>
+              <a class="text-link js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero treinar Jiu-Jitsu.">Quero treinar Jiu-Jitsu <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section" id="kids" aria-labelledby="kids-title">
+      <div class="container kids-layout">
+        <figure class="image-frame reveal">
+          <img
+            src="/images/icone-kids.webp"
+            alt="Crianças treinando artes marciais na Bravus Combat"
+            onerror="this.hidden=true; this.closest('.image-frame').classList.add('image-missing')"
+          />
+        </figure>
+
+        <div class="reveal delay-1">
+          <p class="eyebrow">Bravus Kids</p>
+          <h2 class="section-title dark" id="kids-title">Pequenos lutadores. Grandes aprendizados.</h2>
+          <p class="section-copy dark">
+            Nas turmas infantis, as artes marciais se tornam uma ferramenta para ajudar crianças a desenvolverem valores
+            que carregam para toda a vida.
+          </p>
+
+          <div class="values-row" aria-label="Valores desenvolvidos no Bravus Kids">
+            <span class="value-pill">Disciplina</span>
+            <span class="value-pill">Respeito</span>
+            <span class="value-pill">Confiança</span>
+            <span class="value-pill">Coordenação</span>
+            <span class="value-pill">Concentração</span>
+            <span class="value-pill">Socialização</span>
+          </div>
+
+          <div class="kids-cards">
+            <article class="mini-card">
+              <h3>Muay Thai Kids</h3>
+              <p>Introdução às artes marciais através de técnica, movimento e disciplina.</p>
+            </article>
+            <article class="mini-card">
+              <h3>Jiu-Jitsu Kids</h3>
+              <p>Desenvolvimento físico e mental através dos fundamentos do Jiu-Jitsu.</p>
+            </article>
+          </div>
+
+          <div class="hero-cta">
+            <a class="button dark js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero conhecer as turmas Kids.">
+              <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              Conhecer turmas Kids
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="wesley-nonato" aria-labelledby="coach-title">
+      <div class="container coach-layout">
+        <div class="reveal">
+          <p class="eyebrow">Experiência construída na prática</p>
+          <h2 class="coach-title" id="coach-title">Wesley <span>Nonato</span></h2>
+          <div class="coach-tags">
+            <span>Treinador</span>
+            <span>Atleta</span>
+            <span>Campeão Mundial</span>
+          </div>
+          <div class="coach-copy">
+            <p>
+              Antes de existir a Bravus Combat, existiram anos de treino, desafios, competições, vitórias e aprendizado.
+              Wesley construiu sua trajetória dedicando grande parte da vida às artes marciais.
+            </p>
+            <p>
+              Hoje, essa experiência chega aos alunos através de uma metodologia que une técnica, disciplina e evolução
+              constante.
+            </p>
+            <p>
+              Mais do que formar lutadores, o objetivo é usar tudo o que o esporte ensina para formar pessoas mais
+              confiantes e preparadas.
+            </p>
+          </div>
+        </div>
+
+        <figure class="image-frame reveal delay-2">
+          <img
+            src="/images/wesley-nonato-bravus.webp"
+            alt="Wesley Nonato, treinador da Bravus Combat"
+            onerror="this.hidden=true; this.closest('.image-frame').classList.add('image-missing')"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section reasons" aria-labelledby="reasons-title">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">Por que treinar na Bravus?</p>
+          <h2 class="section-title" id="reasons-title">Você não precisa ser lutador para começar.</h2>
+          <p class="section-copy">
+            Cada pessoa chega à Bravus por um motivo diferente. Algumas querem aprender a lutar, outras querem melhorar
+            o físico, aliviar o estresse ou competir. Todas possuem algo em comum: querem evoluir.
+          </p>
+        </div>
+
+        <div class="grid reason-grid">
+          <article class="reason-card reveal" data-index="01">
+            <svg aria-hidden="true"><use href="#icon-users"></use></svg>
+            <h3>Todos os níveis</h3>
+            <p>Treinos para iniciantes e praticantes experientes, independentemente do ponto de partida.</p>
+          </article>
+          <article class="reason-card reveal delay-1" data-index="02">
+            <svg aria-hidden="true"><use href="#icon-target"></use></svg>
+            <h3>Técnica aplicada</h3>
+            <p>Fundamentos, movimentação, defesa e aplicação real das técnicas de cada modalidade.</p>
+          </article>
+          <article class="reason-card reveal delay-2" data-index="03">
+            <svg aria-hidden="true"><use href="#icon-flame"></use></svg>
+            <h3>Condicionamento</h3>
+            <p>Desenvolva resistência, força, agilidade, coordenação e presença mental.</p>
+          </article>
+          <article class="reason-card reveal" data-index="04">
+            <svg aria-hidden="true"><use href="#icon-shield"></use></svg>
+            <h3>Defesa pessoal</h3>
+            <p>Aprenda percepção, controle, postura e recursos práticos para se sentir mais seguro.</p>
+          </article>
+          <article class="reason-card reveal delay-1" data-index="05">
+            <svg aria-hidden="true"><use href="#icon-spark"></use></svg>
+            <h3>Ambiente de evolução</h3>
+            <p>Treine ao lado de pessoas que compartilham o objetivo de melhorar.</p>
+          </article>
+          <article class="reason-card reveal delay-2" data-index="06">
+            <svg aria-hidden="true"><use href="#icon-trophy"></use></svg>
+            <h3>Caminho competitivo</h3>
+            <p>Para quem deseja levar a modalidade a um nível mais alto com orientação técnica.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section schedule-section" id="horarios" aria-labelledby="horarios-title">
+      <div class="schedule-iris-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="schedule-heading">
+          <div>
+            <p class="eyebrow">Horários</p>
+            <h2 class="section-title dark" id="horarios-title">Horários de <span class="script-word">Aulas</span></h2>
+            <p class="section-copy dark">
+              Com aulas durante a manhã e noite, fica mais fácil encaixar a luta na sua rotina.
+            </p>
+          </div>
+          <a class="button dark js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar os horários disponíveis.">
+            <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+            Confirmar horários
+          </a>
+        </div>
+
+        <div class="schedule-table-panel">
+          <div class="schedule-panel-top">
+            <strong>Grade semanal</strong>
+            <span>Muay Thai - Boxe - Jiu-Jitsu - Kids</span>
+          </div>
+
+          <div class="schedule-mobile-filter" data-schedule-mobile-filter>
+            <label for="scheduleDaySelect">Escolha o dia da semana</label>
+            <div class="schedule-select-wrap">
+              <select class="schedule-day-select" id="scheduleDaySelect" data-schedule-day-select aria-controls="scheduleTable">
+                <option value="0">Segunda-feira</option>
+                <option value="1">Terça-feira</option>
+                <option value="2">Quarta-feira</option>
+                <option value="3">Quinta-feira</option>
+                <option value="4">Sexta-feira</option>
+                <option value="5">Sábado</option>
+              </select>
+            </div>
+            <p class="schedule-day-summary" data-schedule-day-summary aria-live="polite">Mostrando horários de segunda-feira.</p>
+          </div>
+
+          <div class="schedule-table-scroll" tabindex="0">
+            <table class="schedule-table" id="scheduleTable" data-schedule-table>
+              <caption>Grade semanal de aulas da Bravus Combat</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Seg</th>
+                  <th scope="col">Ter</th>
+                  <th scope="col">Qua</th>
+                  <th scope="col">Qui</th>
+                  <th scope="col">Sex</th>
+                  <th scope="col">Sáb</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="schedule-day-track">
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai na segunda às 08:00.">
+                        <span class="class-time">08:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                      <span class="schedule-spacer" aria-hidden="true">
+                        <span>10:00</span>
+                        <span>12:00</span>
+                        <span>14:00</span>
+                        <span>16:00</span>
+                      </span>
+                      <span class="schedule-separator" aria-hidden="true"></span>
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai na segunda às 17:00.">
+                        <span class="class-time">17:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                      <a class="schedule-class kids js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai Kids na segunda às 18:00.">
+                        <span class="class-time">18:00</span>
+                        <span class="class-name">Muay Thai Kids</span>
+                      </a>
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai na segunda às 19:00.">
+                        <span class="class-time">19:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                      <a class="schedule-class jiu js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Jiu-Jitsu na segunda às 20:00.">
+                        <span class="class-time">20:00</span>
+                        <span class="class-name">Jiu-Jitsu</span>
+                      </a>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="schedule-day-track">
+                      <a class="schedule-class boxe js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Boxe na terça às 06:00.">
+                        <span class="class-time">06:00</span>
+                        <span class="class-name">Boxe</span>
+                      </a>
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai na terça às 07:00.">
+                        <span class="class-time">07:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                      <span class="schedule-spacer" aria-hidden="true">
+                        <span>09:00</span>
+                        <span>11:00</span>
+                        <span>13:00</span>
+                        <span>16:00</span>
+                      </span>
+                      <span class="schedule-separator" aria-hidden="true"></span>
+                      <a class="schedule-class boxe js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Boxe na terça às 18:00.">
+                        <span class="class-time">18:00</span>
+                        <span class="class-name">Boxe</span>
+                      </a>
+                      <a class="schedule-class kids js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Jiu-Jitsu Kids na terça às 19:00.">
+                        <span class="class-time">19:00</span>
+                        <span class="class-name">Jiu-Jitsu Kids</span>
+                      </a>
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai na terça às 20:00.">
+                        <span class="class-time">20:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="schedule-day-track">
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai na quarta às 08:00.">
+                        <span class="class-time">08:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                      <span class="schedule-spacer" aria-hidden="true">
+                        <span>10:00</span>
+                        <span>12:00</span>
+                        <span>14:00</span>
+                        <span>16:00</span>
+                      </span>
+                      <span class="schedule-separator" aria-hidden="true"></span>
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai na quarta às 17:00.">
+                        <span class="class-time">17:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                      <a class="schedule-class kids js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai Kids na quarta às 18:00.">
+                        <span class="class-time">18:00</span>
+                        <span class="class-name">Muay Thai Kids</span>
+                      </a>
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai na quarta às 19:00.">
+                        <span class="class-time">19:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                      <a class="schedule-class jiu js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Jiu-Jitsu na quarta às 20:00.">
+                        <span class="class-time">20:00</span>
+                        <span class="class-name">Jiu-Jitsu</span>
+                      </a>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="schedule-day-track">
+                      <a class="schedule-class boxe js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Boxe na quinta às 06:00.">
+                        <span class="class-time">06:00</span>
+                        <span class="class-name">Boxe</span>
+                      </a>
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai na quinta às 07:00.">
+                        <span class="class-time">07:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                      <span class="schedule-spacer" aria-hidden="true">
+                        <span>09:00</span>
+                        <span>11:00</span>
+                        <span>13:00</span>
+                        <span>16:00</span>
+                      </span>
+                      <span class="schedule-separator" aria-hidden="true"></span>
+                      <a class="schedule-class boxe js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Boxe na quinta às 18:00.">
+                        <span class="class-time">18:00</span>
+                        <span class="class-name">Boxe</span>
+                      </a>
+                      <a class="schedule-class kids js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Jiu-Jitsu Kids na quinta às 19:00.">
+                        <span class="class-time">19:00</span>
+                        <span class="class-name">Jiu-Jitsu Kids</span>
+                      </a>
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai na quinta às 20:00.">
+                        <span class="class-time">20:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="schedule-day-track">
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai na sexta às 08:00.">
+                        <span class="class-time">08:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                      <span class="schedule-spacer" aria-hidden="true">
+                        <span>10:00</span>
+                        <span>12:00</span>
+                        <span>14:00</span>
+                        <span>16:00</span>
+                      </span>
+                      <span class="schedule-separator" aria-hidden="true"></span>
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai na sexta às 17:00.">
+                        <span class="class-time">17:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                      <a class="schedule-class kids js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai Kids na sexta às 18:00.">
+                        <span class="class-time">18:00</span>
+                        <span class="class-name">Muay Thai Kids</span>
+                      </a>
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai na sexta às 19:00.">
+                        <span class="class-time">19:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                      <a class="schedule-class jiu js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Jiu-Jitsu na sexta às 20:00.">
+                        <span class="class-time">20:00</span>
+                        <span class="class-name">Jiu-Jitsu</span>
+                      </a>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="schedule-day-track">
+                      <a class="schedule-class kids js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai Kids no sábado às 09:00.">
+                        <span class="class-time">09:00</span>
+                        <span class="class-name">Muay Thai Kids</span>
+                      </a>
+                      <a class="schedule-class muay js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Muay Thai no sábado às 10:00.">
+                        <span class="class-time">10:00</span>
+                        <span class="class-name">Muay Thai</span>
+                      </a>
+                      <span class="schedule-spacer compact" aria-hidden="true">
+                        <span>11:00</span>
+                      </span>
+                      <span class="schedule-separator" aria-hidden="true"></span>
+                      <a class="schedule-class kids js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Jiu-Jitsu Kids no sábado às 12:00.">
+                        <span class="class-time">12:00</span>
+                        <span class="class-name">Jiu-Jitsu Kids</span>
+                      </a>
+                      <a class="schedule-class jiu js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero confirmar o horário de Jiu-Jitsu no sábado às 13:00.">
+                        <span class="class-time">13:00</span>
+                        <span class="class-name">Jiu-Jitsu</span>
+                      </a>
+                      <span class="schedule-spacer compact tail" aria-hidden="true">
+                        <span>14:00</span>
+                        <span>15:00</span>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="schedule-table-footer">
+            <ul class="schedule-legend" aria-label="Modalidades na tabela de horários">
+              <li><span class="legend-dot" aria-hidden="true"></span>Muay Thai</li>
+              <li><span class="legend-dot" aria-hidden="true"></span>Boxe</li>
+              <li><span class="legend-dot" aria-hidden="true"></span>Jiu-Jitsu</li>
+              <li><span class="legend-dot" aria-hidden="true"></span>Kids</li>
+            </ul>
+            <p class="schedule-note">
+              <svg aria-hidden="true"><use href="#icon-clock"></use></svg>
+              Horários sujeitos a alterações. Consulte a Bravus para confirmar a disponibilidade da turma.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="beneficios" aria-labelledby="beneficios-title">
+      <div class="container benefits-layout">
+        <div class="reveal">
+          <p class="eyebrow">TotalPass e Wellhub</p>
+          <h2 class="section-title" id="beneficios-title">Seu benefício também treina aqui.</h2>
+          <p class="section-copy">
+            Já possui TotalPass ou Wellhub? Então ficou ainda mais fácil fazer parte da Bravus Combat.
+            Consulte as condições do seu plano antes de realizar o treino.
+          </p>
+
+          <div class="benefit-cards">
+            <article class="benefit-card">
+              <strong>Wellhub</strong>
+              <p>Até 8 check-ins por mês, conforme informação divulgada pela Bravus.</p>
+            </article>
+            <article class="benefit-card">
+              <strong>TotalPass</strong>
+              <p>Até 15 check-ins por mês, conforme informação divulgada pela Bravus.</p>
+            </article>
+          </div>
+        </div>
+
+        <figure class="image-frame reveal delay-2">
+          <img
+            src="/images/aluno-bravus-combat.webp"
+            alt="Aluno treinando na Bravus Combat"
+            onerror="this.hidden=true; this.closest('.image-frame').classList.add('image-missing')"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section reasons" aria-labelledby="audience-title">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">Para quem é a Bravus?</p>
+          <h2 class="section-title" id="audience-title">O primeiro passo só exige começar.</h2>
+        </div>
+
+        <div class="grid audience-grid">
+          <article class="audience-card reveal">
+            <svg aria-hidden="true"><use href="#icon-target"></use></svg>
+            <h3>Aprender luta</h3>
+            <p>Descubra os fundamentos e evolua gradualmente.</p>
+          </article>
+          <article class="audience-card reveal delay-1">
+            <svg aria-hidden="true"><use href="#icon-flame"></use></svg>
+            <h3>Melhorar o físico</h3>
+            <p>Transforme seu treino em algo dinâmico e desafiador.</p>
+          </article>
+          <article class="audience-card reveal delay-2">
+            <svg aria-hidden="true"><use href="#icon-shield"></use></svg>
+            <h3>Ganhar confiança</h3>
+            <p>Supere desafios e acompanhe sua própria evolução.</p>
+          </article>
+          <article class="audience-card reveal">
+            <svg aria-hidden="true"><use href="#icon-spark"></use></svg>
+            <h3>Aliviar estresse</h3>
+            <p>Desconecte-se da rotina enquanto mantém corpo e mente ativos.</p>
+          </article>
+          <article class="audience-card reveal delay-1">
+            <svg aria-hidden="true"><use href="#icon-users"></use></svg>
+            <h3>Defesa pessoal</h3>
+            <p>Desenvolva técnica, percepção e controle.</p>
+          </article>
+          <article class="audience-card reveal delay-2">
+            <svg aria-hidden="true"><use href="#icon-trophy"></use></svg>
+            <h3>Competir</h3>
+            <p>Para quem deseja levar a modalidade a um nível competitivo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">Contato e localização</p>
+          <h2 class="section-title" id="contato-title">Venha treinar com a gente.</h2>
+          <p class="section-copy">
+            Bravus Combat em Limeira/SP. Envie sua mensagem pelo formulário e fale direto pelo WhatsApp.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-info reveal">
+            <article class="info-block info-block-feature">
+              <span class="icon-box"><svg aria-hidden="true"><use href="#icon-map"></use></svg></span>
+              <div>
+                <span class="contact-kicker">Centro de treinamento</span>
+                <h3>Visite a Bravus</h3>
+                <address>R. Ramiro de Andrade, 104 A<br />Vila Queiroz - Limeira/SP<br />CEP 13485-002</address>
+                <div class="contact-actions">
+                  <a class="button secondary" href="https://www.google.com/maps/search/?api=1&query=R.+Ramiro+de+Andrade,+104+A,+Vila+Queiroz,+Limeira,+SP" target="_blank" rel="noopener">
+                    <svg aria-hidden="true"><use href="#icon-map"></use></svg>
+                    Como chegar
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <div class="contact-mini-grid" aria-label="Canais rápidos">
+              <a class="contact-icon-link js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero mais informações." aria-label="Chamar no WhatsApp">
+                <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              </a>
+
+              <a class="contact-icon-link" href="https://www.instagram.com/ct.bravus/" target="_blank" rel="noopener" aria-label="Abrir Instagram da Bravus">
+                <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form reveal delay-2" id="whatsappForm">
+            <div class="form-heading">
+              <span class="form-kicker">Resposta pelo WhatsApp</span>
+              <h3>Agende seu primeiro treino</h3>
+              <p>Conte para a equipe o que você procura e receba uma orientação rápida para escolher a melhor turma.</p>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-row">
+                <div class="field">
+                  <label for="name">Nome</label>
+                  <input id="name" name="name" type="text" placeholder="Seu nome" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label for="phone">Telefone</label>
+                  <input id="phone" name="phone" type="tel" placeholder="(19) 99999-9999" autocomplete="tel" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="modality">Modalidade</label>
+                  <select id="modality" name="modality" required>
+                    <option value="">Escolha uma opção</option>
+                    <option value="Muay Thai">Muay Thai</option>
+                    <option value="Boxe">Boxe</option>
+                    <option value="Jiu-Jitsu">Jiu-Jitsu</option>
+                    <option value="Turmas Kids">Turmas Kids</option>
+                    <option value="Ainda não sei">Ainda não sei</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="period">Melhor período</label>
+                  <select id="period" name="period" required>
+                    <option value="">Escolha um período</option>
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
+                    <option value="Sábado">Sábado</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" placeholder="Quero agendar uma aula experimental e conhecer a Bravus Combat."></textarea>
+              </div>
+
+              <button class="button" type="submit">
+                <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                Enviar para WhatsApp
+              </button>
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="final-title">
+      <div class="container final-layout">
+        <div>
+          <h2 id="final-title">Você pode continuar pensando em começar. Ou pode começar hoje.</h2>
+          <p>
+            Entre no tatame. Coloque as luvas. Aceite o desafio. Disciplina, coragem e evolução começam no próximo treino.
+          </p>
+        </div>
+        <a class="button dark js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero fazer parte da Bravus.">
+          <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+          Quero fazer parte
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <p>Bravus Combat - Muay Thai, Boxe e Jiu-Jitsu em Limeira/SP.</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/ct.bravus/" target="_blank" rel="noopener">Instagram</a>
+        <a class="js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero falar com vocês.">WhatsApp</a>
+        <a href="/blog/">Blog</a>
+        <a href="#inicio">Topo</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp js-whatsapp" href="#" data-message="Olá, Bravus Combat! Quero agendar uma aula experimental." aria-label="Chamar Bravus Combat no WhatsApp">
+    <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+  </a>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "Bravus Combat",
+      "description": "Academia de luta com Muay Thai, Boxe, Jiu-Jitsu e turmas Kids em Limeira/SP.",
+      "telephone": "+55 19 99927-0275",
+      "url": "https://www.instagram.com/ct.bravus/",
+      "sameAs": ["https://www.instagram.com/ct.bravus/"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Ramiro de Andrade, 104 A",
+        "addressLocality": "Limeira",
+        "addressRegion": "SP",
+        "postalCode": "13485-002",
+        "addressCountry": "BR"
+      },
+      "sport": ["Muay Thai", "Boxe", "Jiu-Jitsu"]
+    }
+  </script>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const phoneNumber = "5519999270275";
+      const whatsappBase = `https://wa.me/${phoneNumber}?text=`;
+      const root = document.documentElement;
+      const header = document.querySelector("[data-header]");
+      const menu = document.querySelector("[data-menu]");
+      const menuToggle = document.querySelector("[data-menu-toggle]");
+      const themeToggle = document.querySelector("[data-theme-toggle]");
+      const brandLogo = document.querySelector("[data-brand-logo]");
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      const form = document.querySelector("#whatsappForm");
+      const formStatus = document.querySelector("#formStatus");
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const hero = document.querySelector("[data-hero-carousel]");
+      const heroBgCurrent = document.querySelector("[data-hero-bg-current]");
+      const heroBgNext = document.querySelector("[data-hero-bg-next]");
+      const heroContent = hero?.querySelector(".hero-content");
+      const heroKicker = document.querySelector("[data-hero-kicker]");
+      const heroTitleMain = document.querySelector("[data-hero-title-main]");
+      const heroTitleAccent = document.querySelector("[data-hero-title-accent]");
+      const heroLead = document.querySelector("[data-hero-lead]");
+      const heroPrev = document.querySelector("[data-hero-prev]");
+      const heroNext = document.querySelector("[data-hero-next]");
+      const aboutVideo = document.querySelector("[data-about-video]");
+      const videoAudioToggle = document.querySelector("[data-video-audio-toggle]");
+      const videoPlayToggle = document.querySelector("[data-video-play-toggle]");
+      const videoVolume = document.querySelector("[data-video-volume]");
+      const aboutVideoFrame = aboutVideo?.closest(".about-video-frame");
+      const scheduleTable = document.querySelector("[data-schedule-table]");
+      const scheduleDaySelect = document.querySelector("[data-schedule-day-select]");
+      const scheduleDaySummary = document.querySelector("[data-schedule-day-summary]");
+      const scheduleMobileQuery = window.matchMedia("(max-width: 680px)");
+      const heroSlides = [
+        {
+          kicker: "Modalidade em destaque",
+          title: "Muay Thai",
+          accent: "Técnica e potência",
+          lead: "Uma arte marcial completa que trabalha punhos, cotovelos, joelhos e pernas enquanto desenvolve resistência, coordenação, agilidade e confiança.",
+          image: "/images/hero-1.webp"
+        },
+        {
+          kicker: "Treino intenso para corpo e mente",
+          title: "Boxe",
+          accent: "Velocidade e precisão",
+          lead: "Desenvolva golpes, movimentação, esquivas, reflexos e condicionamento através de uma das modalidades de combate mais tradicionais do mundo.",
+          image: "/images/hero-2.webp"
+        },
+        {
+          kicker: "Estratégia sob pressão",
+          title: "Jiu-Jitsu",
+          accent: "Técnica antes da força",
+          lead: "Aprenda controle, defesa e finalizações enquanto desenvolve disciplina, raciocínio, calma sob pressão e evolução treino após treino.",
+          image: "/images/hero-3.webp"
+        },
+        {
+          kicker: "Pequenos lutadores",
+          title: "Bravus Kids",
+          accent: "Grandes aprendizados",
+          lead: "Turmas infantis para desenvolver disciplina, respeito, confiança, coordenação, concentração e socialização em um ambiente preparado.",
+          image: "/images/hero-4.webp"
+        }
+      ];
+
+      let activeHeroSlide = 0;
+      let heroTransitionTimer;
+      let heroTextTimer;
+      let heroAutoTimer;
+
+      const buildWhatsAppUrl = (message) => `${whatsappBase}${encodeURIComponent(message)}`;
+
+      const readStoredTheme = () => {
+        try {
+          return localStorage.getItem("bravus-theme");
+        } catch {
+          return null;
+        }
+      };
+
+      const storeTheme = (theme) => {
+        try {
+          localStorage.setItem("bravus-theme", theme);
+        } catch {
+          return;
+        }
+      };
+
+      const applyTheme = (theme) => {
+        const nextTheme = theme === "light" ? "light" : "dark";
+        root.dataset.theme = nextTheme;
+        themeToggle?.setAttribute("aria-label", nextTheme === "dark" ? "Alternar para tema claro" : "Alternar para tema escuro");
+        themeColor?.setAttribute("content", nextTheme === "dark" ? "#050505" : "#f7f3e8");
+        if (brandLogo) {
+          const nextLogo = nextTheme === "light" ? brandLogo.dataset.lightLogo : brandLogo.dataset.darkLogo;
+          const fallbackLogo = brandLogo.dataset.darkFallback || brandLogo.dataset.darkLogo;
+          brandLogo.onerror = () => {
+            brandLogo.onerror = null;
+            brandLogo.src = fallbackLogo;
+          };
+          brandLogo.src = nextLogo || fallbackLogo;
+        }
+      };
+
+      const setupThemeToggle = () => {
+        applyTheme(readStoredTheme() || "dark");
+
+        themeToggle?.addEventListener("click", () => {
+          const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
+          applyTheme(nextTheme);
+          storeTheme(nextTheme);
+        });
+      };
+
+      const updateHeroText = (slide) => {
+        if (!slide) return;
+        if (heroKicker) heroKicker.textContent = slide.kicker;
+        if (heroTitleMain) heroTitleMain.textContent = slide.title;
+        if (heroTitleAccent) heroTitleAccent.textContent = slide.accent;
+        if (heroLead) heroLead.textContent = slide.lead;
+      };
+
+      const setHeroSlide = (index, direction = 1) => {
+        if (!hero || !heroBgCurrent || !heroBgNext || !heroSlides[index] || index === activeHeroSlide) return;
+
+        const slide = heroSlides[index];
+        const transitionDirection = direction < 0 ? -1 : 1;
+        activeHeroSlide = index;
+        clearTimeout(heroTransitionTimer);
+        clearTimeout(heroTextTimer);
+
+        if (prefersReducedMotion) {
+          heroBgCurrent.style.backgroundImage = `url("${slide.image}")`;
+          updateHeroText(slide);
+          return;
+        }
+
+        hero.classList.remove("is-changing", "is-prev", "is-next");
+        heroBgNext.style.backgroundImage = `url("${slide.image}")`;
+        hero.classList.add(transitionDirection < 0 ? "is-prev" : "is-next");
+        void hero.offsetWidth;
+        hero.classList.add("is-changing");
+        heroContent?.classList.add("is-switching");
+
+        heroTextTimer = window.setTimeout(() => {
+          updateHeroText(slide);
+          heroContent?.classList.remove("is-switching");
+        }, 170);
+
+        heroTransitionTimer = window.setTimeout(() => {
+          heroBgCurrent.style.backgroundImage = `url("${slide.image}")`;
+          heroBgNext.style.backgroundImage = "";
+          hero.classList.remove("is-changing", "is-prev", "is-next");
+        }, 1120);
+      };
+
+      const stepHeroSlide = (direction) => {
+        const nextIndex = (activeHeroSlide + direction + heroSlides.length) % heroSlides.length;
+        setHeroSlide(nextIndex, direction);
+        startHeroAutoplay();
+      };
+
+      const startHeroAutoplay = () => {
+        if (prefersReducedMotion || heroSlides.length < 2) return;
+        clearInterval(heroAutoTimer);
+        heroAutoTimer = window.setInterval(() => {
+          const nextIndex = (activeHeroSlide + 1) % heroSlides.length;
+          setHeroSlide(nextIndex, 1);
+        }, 7200);
+      };
+
+      const setupHeroCarousel = () => {
+        if (!hero || !heroBgCurrent) return;
+
+        heroBgCurrent.style.backgroundImage = `url("${heroSlides[0].image}")`;
+        updateHeroText(heroSlides[0]);
+
+        heroSlides.forEach((slide) => {
+          const image = new Image();
+          image.src = slide.image;
+        });
+
+        heroPrev?.addEventListener("click", () => stepHeroSlide(-1));
+        heroNext?.addEventListener("click", () => stepHeroSlide(1));
+
+        hero.addEventListener("pointerenter", () => clearInterval(heroAutoTimer));
+        hero.addEventListener("pointerleave", startHeroAutoplay);
+        hero.addEventListener("focusin", () => clearInterval(heroAutoTimer));
+        hero.addEventListener("focusout", startHeroAutoplay);
+        startHeroAutoplay();
+      };
+
+      const updateWhatsAppLinks = () => {
+        document.querySelectorAll(".js-whatsapp").forEach((link) => {
+          const message = link.dataset.message || "Olá, Bravus Combat! Quero mais informações.";
+          link.href = buildWhatsAppUrl(message);
+          link.target = "_blank";
+          link.rel = "noopener";
+        });
+      };
+
+      const closeMenu = () => {
+        menu?.classList.remove("is-open");
+        menuToggle?.classList.remove("is-open");
+        menuToggle?.setAttribute("aria-expanded", "false");
+        menuToggle?.setAttribute("aria-label", "Abrir menu");
+      };
+
+      const toggleMenu = () => {
+        const isOpen = menu?.classList.toggle("is-open");
+        menuToggle?.classList.toggle("is-open", isOpen);
+        menuToggle?.setAttribute("aria-expanded", String(Boolean(isOpen)));
+        menuToggle?.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+      };
+
+      const handleScroll = () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+        root.style.setProperty("--scroll-progress", `${progress}%`);
+        header?.classList.toggle("is-scrolled", scrollTop > 24);
+      };
+
+      const setupReveal = () => {
+        const items = document.querySelectorAll(".reveal");
+        if (!items.length) return;
+
+        if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+          items.forEach((item) => item.classList.add("is-visible"));
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.16, rootMargin: "0px 0px -70px 0px" }
+        );
+
+        items.forEach((item) => observer.observe(item));
+      };
+
+      const setupCounters = () => {
+        const counters = document.querySelectorAll("[data-count]");
+        if (!counters.length) return;
+
+        const animate = (counter) => {
+          const target = Number(counter.dataset.count || 0);
+          const duration = prefersReducedMotion ? 0 : 1100;
+          const start = performance.now();
+
+          const tick = (now) => {
+            const elapsed = now - start;
+            const progress = duration === 0 ? 1 : Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            counter.textContent = String(Math.round(target * eased));
+
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            }
+          };
+
+          requestAnimationFrame(tick);
+        };
+
+        if (!("IntersectionObserver" in window)) {
+          counters.forEach(animate);
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animate(entry.target);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        counters.forEach((counter) => observer.observe(counter));
+      };
+
+      const setupTiltCards = () => {
+        if (prefersReducedMotion) return;
+
+        document.querySelectorAll(".tilt-card").forEach((card) => {
+          card.addEventListener("mousemove", (event) => {
+            const rect = card.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            const rotateX = ((y / rect.height) - 0.5) * -4;
+            const rotateY = ((x / rect.width) - 0.5) * 4;
+            card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+          });
+
+          card.addEventListener("mouseleave", () => {
+            card.style.transform = "";
+          });
+        });
+      };
+
+      const setupAboutVideoAudio = () => {
+        if (!aboutVideo || !videoAudioToggle || !videoVolume || !aboutVideoFrame) return;
+
+        const syncVideoAudioState = () => {
+          const volume = Number(videoVolume.value || 0);
+          const isAudioOn = !aboutVideo.muted && volume > 0;
+
+          videoVolume.style.setProperty("--volume-fill", `${Math.round(volume * 100)}%`);
+          aboutVideoFrame.classList.toggle("is-audio-on", isAudioOn);
+          videoAudioToggle.setAttribute("aria-pressed", String(isAudioOn));
+          videoAudioToggle.setAttribute("aria-label", isAudioOn ? "Desativar som do vídeo" : "Ativar som do vídeo");
+        };
+
+        const playVideo = () => {
+          aboutVideo.play().catch(() => {});
+        };
+
+        const syncVideoPlaybackState = () => {
+          const isPaused = aboutVideo.paused;
+          aboutVideoFrame.classList.toggle("is-video-paused", isPaused);
+          videoPlayToggle?.setAttribute("aria-label", isPaused ? "Reproduzir vídeo" : "Pausar vídeo");
+        };
+
+        const toggleVideoPlayback = () => {
+          if (aboutVideo.paused) {
+            playVideo();
+          } else {
+            aboutVideo.pause();
+          }
+        };
+
+        aboutVideo.volume = Number(videoVolume.value || 0.65);
+        syncVideoAudioState();
+        syncVideoPlaybackState();
+
+        videoAudioToggle.addEventListener("click", () => {
+          const shouldEnableAudio = aboutVideo.muted || aboutVideo.volume === 0;
+
+          if (shouldEnableAudio) {
+            const nextVolume = Number(videoVolume.value || 0.65) || 0.65;
+            aboutVideo.volume = nextVolume;
+            aboutVideo.muted = false;
+            videoVolume.value = String(nextVolume);
+            playVideo();
+          } else {
+            aboutVideo.muted = true;
+          }
+
+          syncVideoAudioState();
+        });
+
+        videoPlayToggle?.addEventListener("click", toggleVideoPlayback);
+        aboutVideo.addEventListener("click", toggleVideoPlayback);
+        aboutVideo.addEventListener("play", syncVideoPlaybackState);
+        aboutVideo.addEventListener("pause", syncVideoPlaybackState);
+
+        videoVolume.addEventListener("input", () => {
+          const nextVolume = Number(videoVolume.value || 0);
+
+          aboutVideo.volume = nextVolume;
+          aboutVideo.muted = nextVolume === 0;
+          if (nextVolume > 0) {
+            aboutVideo.muted = false;
+            playVideo();
+          }
+
+          syncVideoAudioState();
+        });
+
+        aboutVideo.addEventListener("volumechange", syncVideoAudioState);
+      };
+
+      const setupMobileSchedule = () => {
+        if (!scheduleTable || !scheduleDaySelect) return;
+
+        const dayNames = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"];
+        const headers = Array.from(scheduleTable.querySelectorAll("thead th"));
+        const dayCells = Array.from(scheduleTable.querySelectorAll("tbody tr:first-child > td"));
+
+        const clearScheduleFilter = () => {
+          [...headers, ...dayCells].forEach((cell) => {
+            cell.removeAttribute("data-schedule-hidden");
+            cell.removeAttribute("aria-hidden");
+          });
+          scheduleTable.classList.remove("is-switching");
+        };
+
+        const applyScheduleFilter = () => {
+          if (!scheduleMobileQuery.matches) {
+            clearScheduleFilter();
+            return;
+          }
+
+          const selectedDay = Number(scheduleDaySelect.value || 0);
+
+          headers.forEach((header, index) => {
+            const isHidden = index !== selectedDay;
+            header.dataset.scheduleHidden = String(isHidden);
+            header.setAttribute("aria-hidden", String(isHidden));
+          });
+
+          dayCells.forEach((cell, index) => {
+            const isHidden = index !== selectedDay;
+            cell.dataset.scheduleHidden = String(isHidden);
+            cell.setAttribute("aria-hidden", String(isHidden));
+          });
+
+          if (scheduleDaySummary) {
+            scheduleDaySummary.textContent = `Mostrando horários de ${dayNames[selectedDay]}.`;
+          }
+
+          scheduleTable.classList.remove("is-switching");
+          void scheduleTable.offsetWidth;
+          scheduleTable.classList.add("is-switching");
+        };
+
+        scheduleDaySelect.addEventListener("change", applyScheduleFilter);
+
+        if (typeof scheduleMobileQuery.addEventListener === "function") {
+          scheduleMobileQuery.addEventListener("change", applyScheduleFilter);
+        } else {
+          scheduleMobileQuery.addListener(applyScheduleFilter);
+        }
+
+        applyScheduleFilter();
+      };
+
+      const setupLogoFallbacks = () => {
+        document.querySelectorAll("img[data-fallback]").forEach((image) => {
+          image.addEventListener("error", () => {
+            const fallback = image.dataset.fallback;
+            if (fallback && image.src !== fallback) {
+              image.src = fallback;
+              image.removeAttribute("data-fallback");
+            }
+          });
+        });
+      };
+
+      const setupContactForm = () => {
+        if (!form) return;
+
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          const data = new FormData(form);
+          const name = String(data.get("name") || "").trim();
+          const phone = String(data.get("phone") || "").trim();
+          const modality = String(data.get("modality") || "").trim();
+          const period = String(data.get("period") || "").trim();
+          const message = String(data.get("message") || "").trim();
+
+          if (!name || !phone || !modality || !period) {
+            formStatus.textContent = "Preencha os campos obrigatórios para enviar.";
+            return;
+          }
+
+          const whatsappMessage = [
+            "Olá, Bravus Combat! Quero agendar uma aula experimental.",
+            "",
+            `Nome: ${name}`,
+            `Telefone: ${phone}`,
+            `Modalidade: ${modality}`,
+            `Melhor período: ${period}`,
+            message ? `Mensagem: ${message}` : "Mensagem: Quero conhecer a Bravus Combat."
+          ].join("\n");
+
+          formStatus.textContent = "Abrindo WhatsApp para finalizar o envio.";
+          window.open(buildWhatsAppUrl(whatsappMessage), "_blank", "noopener");
+        });
+      };
+
+      const setupMouseGlow = () => {
+        if (prefersReducedMotion) return;
+
+        window.addEventListener("pointermove", (event) => {
+          root.style.setProperty("--mouse-x", `${event.clientX}px`);
+          root.style.setProperty("--mouse-y", `${event.clientY}px`);
+        }, { passive: true });
+      };
+
+      menuToggle?.addEventListener("click", toggleMenu);
+      document.querySelectorAll(".nav-links a").forEach((link) => link.addEventListener("click", closeMenu));
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      window.addEventListener("resize", closeMenu);
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
+      });
+
+      setupThemeToggle();
+      updateWhatsAppLinks();
+      setupHeroCarousel();
+      setupAboutVideoAudio();
+      setupMobileSchedule();
+      setupLogoFallbacks();
+      setupReveal();
+      setupCounters();
+      setupTiltCards();
+      setupContactForm();
+      setupMouseGlow();
+      handleScroll();
+    })();
+  </script>
+</body>
+</html>
